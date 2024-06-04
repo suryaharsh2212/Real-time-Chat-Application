@@ -3,7 +3,7 @@
 
 export const UseSendMessage=async(message,senderId,receiverId)=>{
     try {
-        const response = await fetch('https://real-time-chat-application-uyhn-pf4widpb7.vercel.app/user/send', {
+        const response = await fetch('http://localhost:8000/user/send', {
           method: 'POST',
           credentials: "include",
           headers: {

@@ -1,7 +1,7 @@
 async function UseRegisterUser(fullname,phoneno,password)
 {
     try {
-        const response = await fetch('https://real-time-chat-application-uyhn-pf4widpb7.vercel.app/user/registeruser', {
+        const response = await fetch('http://localhost:8000/user/registeruser', {
           method: 'POST',
           credentials: "include",
           headers: {

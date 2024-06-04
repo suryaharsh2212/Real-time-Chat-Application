@@ -1,7 +1,7 @@
 async function UseGetUsers(currentUser)
 {
     try {
-        const response = await fetch('https://real-time-chat-application-uyhn-pf4widpb7.vercel.app/user/getUser', {
+        const response = await fetch('http://localhost:8000/user/getUser', {
           method: 'POST',
           credentials: "include",
           headers: {

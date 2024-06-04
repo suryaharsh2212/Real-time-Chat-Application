@@ -1,7 +1,7 @@
 async function UseLogoutUser()
 {
     try {
-        const response = await fetch('https://real-time-chat-application-uyhn-pf4widpb7.vercel.app/user/logout', {
+        const response = await fetch('http://localhost:8000/user/logout', {
           method: 'POST',
           credentials: "include",
           headers: {

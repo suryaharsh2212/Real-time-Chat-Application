@@ -1,7 +1,7 @@
 async function UseLogin(phoneno,password)
 {
     try {
-        const response = await fetch('https://real-time-chat-application-uyhn-pf4widpb7.vercel.app/user/login', {
+        const response = await fetch('http://localhost:8000/user/login', {
           method: 'POST',
           credentials: "include",
           headers: {

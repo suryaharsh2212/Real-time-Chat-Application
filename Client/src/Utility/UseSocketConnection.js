@@ -1,6 +1,6 @@
 
 import { io } from 'socket.io-client';
-const socket = io('https://real-time-chat-application-uyhn-pf4widpb7.vercel.app');
+const socket = io('http://localhost:8000');
 const createSocket=()=>{
     
     socket.on('connection',(socket)=>{
