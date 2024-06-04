@@ -172,7 +172,7 @@ function Chatbox() {
       />
       <div className='grid grid-cols-4 p-5 h-screen'>
 
-      <div className='col-span-1 p-4    relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
+      <div className='col-span-1 p-4 overflow-y-scroll   relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
           <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(#ff8c00,#ff4500)" }}>Welcome, {name}</h1>
           <div className="pt-2 relative mx-auto  text-gray-600  mb-5 p-2" >
             <input value={search} autoComplete='off' onChange={(e) => { setSearch(e.target.value) }} className="border-2 border-gray-300 bg-white w-full h-10 px-5 pr-16 rounded-lg text-sm outline-orange-600 focus:outline-none"
@@ -192,16 +192,16 @@ function Chatbox() {
 
           {userLoading
             ?
-            <div className="flex flex-col gap-4 w-screen h-screen justify-center">
+            <div className="flex flex-col gap-4 w-52">
               <div className="skeleton h-32 w-full"></div>
               <div className="skeleton h-4 w-28"></div>
               <div className="skeleton h-4 w-full"></div>
               <div className="skeleton h-4 w-full"></div>
             </div>
             :
-            <div className='md:h-[550px] overflow-y-scroll ' style={{border: '0px solid black', scrollbarWidth: '5px', scrollbarColor: 'transparent transparent', borderRadius: '15px', }}>
+            <>
               {Users.map((element, index) => (
-                <button key={index} onClick={() => passdata(element)} className="w-full  btn bg-gradient-to-r  text-white  mb-0   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 outline-red-500 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(to bottom, 135deg, #B2FEFA 10%, #0ED2F7 100%)" }}>
+                <button key={index} onClick={() => passdata(element)} className="w-full  btn bg-gradient-to-r  text-white  mb-5   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 outline-red-500 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(to bottom, 135deg, #B2FEFA 10%, #0ED2F7 100%)" }}>
                   <div className="avatar online ml-6 ">
                     <div className="w-10 h-10 rounded-full" >
                       <img src={`${UserandomImages()}`} alt="avatar" />
@@ -222,9 +222,9 @@ function Chatbox() {
 
                 </button>
               ))}
-            </div>
+            </>
           }
-          
+          <hr/>
           
 
 
@@ -232,10 +232,10 @@ function Chatbox() {
         </div>
       
         
-        <div className='col-span-3 relative   flex flex-col border-t-white rounded-lg' >
+        <div className='col-span-3 flex flex-col'>
           {/* Name display */}
           {/* Chat messages */}
-          <div className='flex flex-row justify-start items-start md:h-[550px] overflow-y-scroll'>
+          <div className='flex flex-row justify-start items-start'>
             <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(to bottom, #FFA500, #FF4500)" }}>
               {loading ?
                 <div className='flex'>
@@ -261,27 +261,19 @@ function Chatbox() {
             </div>
           </div>
 
-          <div className='flex flex-col flex-grow  bg-white-500'>
-            <div className=' w-full  ' style={{ scrollbarWidth: '1px', scrollbarColor: 'transparent transparent', borderRadius: '1px' }}>
+          <div className='flex flex-col flex-grow p-3 bg-white-500'>
+            <div className=' w-full p-3 md:h-[550px] overflow-y-scroll'>
               {checkselected
                 ?
                 <div className='flex justify-center items-center mt-36 '>
                   <div className='flex flex-col'>
                     <h1 className='btn font-light mb-5'> Select a conversation to start........</h1>
-                    {/* <l-helix
-                      size="200"
-                      speed="4.5"
-                      color="cyan"
-                    ></l-helix> */}
+                 
 
 
 
                     <div className='flex justify-center' >
-                      {/* <l-ripples
-                      size="300"
-                      speed="4.5"
-                      color="whitesmoke"
-                    ></l-ripples> */}
+                     
                     </div>
                   </div>
                 </div>
