@@ -10,7 +10,7 @@ export default function Hero() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <div className=" md:h-full h-screen md:-mt-20 overflow-hidden" style={{ backgroundImage: "linear-gradient(to bottom, #FF4500,yellow)" }}>
+        <div className=" md:h-full h-screen md:-mt-20 overflow-hidden" style={{ backgroundImage: "black" }}>
 
 
             <header className="absolute inset-x-0 top-0 z-50" >
