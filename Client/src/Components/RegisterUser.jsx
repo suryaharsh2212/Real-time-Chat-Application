@@ -5,6 +5,7 @@ import isValidIndianPhoneNumber from '../Utility/usephonenumberchecker.js';
 import { Audio } from 'react-loader-spinner'
 import { Link, useNavigate } from 'react-router-dom';
 import UseRegisterUser from '../Utility/useRegistration.js';
+import Auth from './Auth.jsx';
 import 'ldrs/tailChase'
 import 'ldrs/helix'
 import 'ldrs/grid'
@@ -35,6 +36,7 @@ const RegisterUser = () => {
       transition: Bounce,
     });
   }
+  const [showAuth, setShowAuth] = useState(false);
   const [fullname, setfullname] = useState("")
   const [phoneNumber, setphonenumber] = useState("")
   const [password, setPassword] = useState("")
@@ -50,6 +52,7 @@ const RegisterUser = () => {
     }
     else {
       setloading(false)
+      setShowAuth(true)
       const response = await UseRegisterUser(fullname, phoneNumber, password)
       if (response.error) {
         notify(response.message)
@@ -80,7 +83,7 @@ const RegisterUser = () => {
         theme="light"
         transition={Bounce}
       />
-
+       {showAuth===true? <Auth />:null}
 
 
       <div className="h-screen  md:flex">
