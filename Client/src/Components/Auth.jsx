@@ -5,7 +5,7 @@ const Auth = () => {
             widgetId: "34656f736145383531343338",
             tokenAuth: "422133Toct6mnINmUY664507f5P1",
             identifier: "",
-            exposeMethods: "false",
+            exposeMethods: "true",
             success: (data) => {
                 console.log('success response', data);
             },

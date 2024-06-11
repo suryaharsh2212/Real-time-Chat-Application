@@ -6,6 +6,7 @@ import { Audio } from 'react-loader-spinner'
 import { Link, useNavigate } from 'react-router-dom';
 import UseRegisterUser from '../Utility/useRegistration.js';
 import Auth from './Auth.jsx';
+import useAuth from '../Utility/Auth.js';
 import 'ldrs/tailChase'
 import 'ldrs/helix'
 import 'ldrs/grid'
@@ -42,6 +43,7 @@ const RegisterUser = () => {
   const [password, setPassword] = useState("")
   const [loading, setloading] = useState(true)
   const navigate = useNavigate()
+  const { initSendOTP } = useAuth();
   const submitRegistration = async (e) => {
     e.preventDefault();
     if (!fullname || !phoneNumber || !password) {
@@ -50,9 +52,12 @@ const RegisterUser = () => {
     else if (!isValidIndianPhoneNumber(phoneNumber)) {
       notify("Phone number is not valid ")
     }
+    
     else {
-      setloading(false)
-      setShowAuth(true)
+     
+      setloading(false) 
+      initSendOTP()
+      // setShowAuth(true) 
       const response = await UseRegisterUser(fullname, phoneNumber, password)
       if (response.error) {
         notify(response.message)
