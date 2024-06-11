@@ -56,8 +56,8 @@ const RegisterUser = () => {
     else {
      
       setloading(false) 
-      initSendOTP()
-      // setShowAuth(true) 
+      
+      setShowAuth(true) 
       const response = await UseRegisterUser(fullname, phoneNumber, password)
       if (response.error) {
         notify(response.message)

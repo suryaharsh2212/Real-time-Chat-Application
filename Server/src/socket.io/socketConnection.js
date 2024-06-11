@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = new Server(server,{
   cors:{
-    origin:["https://real-time-chat-application-uyhn.vercel.app","http://192.168.0.185:5173"],
+    origin:["https://real-time-chat-application-uyhn.vercel.app","http://192.168.0.185:5173/"],
     methods:["GET","POST"]
   }
 });
