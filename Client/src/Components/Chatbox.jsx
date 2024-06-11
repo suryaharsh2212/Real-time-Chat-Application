@@ -37,9 +37,6 @@ function Chatbox() {
   const navigate = useNavigate()
 
   const handleMessageChange = async () => {
-    
-
-    
     setsentLoading(true)
     setdatamessage(prevMessages => [...prevMessages, { message, user: id }]);
     setMessage(message);
@@ -87,11 +84,14 @@ function Chatbox() {
     };
     fetchdata();
   }, [receiverId._id, id]);
-  
+
   const passdata = async (data) => {
     setReceiverId(data);
     setCheckselected(false);
     Setnewmsg(false);
+
+
+
   };
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -99,6 +99,7 @@ function Chatbox() {
   useEffect(() => {
     scrollToBottom();
   }, [datamessage]);
+
   useEffect(() => {
     if (receiverId) {
       const fetchReceiverName = async () => {
@@ -111,15 +112,18 @@ function Chatbox() {
   const logout = () => {
     const log = UseLogoutUser()
     if (log) {
+
       navigate("/login")
     }
     else {
       alert("error")
     }
   }
+
   const searchUser = async (name) => {
     setsearchLoading(true)
     const searchResult = await UseSearchUser(name)
+
     if (searchResult.status) {
       toast.success(`${searchResult.message}`, {
         position: "bottom-center",
@@ -150,6 +154,7 @@ function Chatbox() {
       setsearchLoading(false)
     }
   }
+
   return (
     <div>
       <ToastContainer
@@ -166,6 +171,7 @@ function Chatbox() {
         transition={Bounce}
       />
       <div className='grid grid-cols-4 p-5 h-screen'>
+
       <div className='col-span-1 p-4 overflow-y-scroll   relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
           <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(#ff8c00,#ff4500)" }}>Welcome, {name}</h1>
           <div className="pt-2 relative mx-auto  text-gray-600  mb-5 p-2" >
@@ -183,6 +189,7 @@ function Chatbox() {
                 <img className='h-5 w-5' src="https://cdn-icons-png.flaticon.com/128/11741/11741045.png" alt="" />}
             </button>
           </div>
+
           {userLoading
             ?
             <div className="flex flex-col gap-4 w-52">
@@ -202,8 +209,8 @@ function Chatbox() {
                   </div>
                   <div className='ml-10 text-gray-700 col-span-3 chat chat-start'>
                     {element.fullname}
-                   
                   </div>
+
                   <div className='col-span-1'>
                     {Isnewmsg ?
                       <img src="https://cdn-icons-png.flaticon.com/128/8265/8265301.png" alt="" />
@@ -211,16 +218,24 @@ function Chatbox() {
                       <></>
                     }
                   </div>
+
+
                 </button>
               ))}
             </>
           }
           <hr/>
+          
+
+
+
         </div>
+      
+        
         <div className='col-span-3 flex flex-col'>
           {/* Name display */}
           {/* Chat messages */}
-          <div className='flex flex-row justify-start md:h-[250px] items-start'>
+          <div className='flex flex-row justify-start items-start'>
             <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(to bottom, #FFA500, #FF4500)" }}>
               {loading ?
                 <div className='flex'>
@@ -253,12 +268,20 @@ function Chatbox() {
                 <div className='flex justify-center items-center mt-36 '>
                   <div className='flex flex-col'>
                     <h1 className='btn font-light mb-5'> Select a conversation to start........</h1>
-                 
+                    {/* <l-helix
+                      size="200"
+                      speed="4.5"
+                      color="cyan"
+                    ></l-helix> */}
 
 
 
                     <div className='flex justify-center' >
-                     
+                      {/* <l-ripples
+                      size="300"
+                      speed="4.5"
+                      color="whitesmoke"
+                    ></l-ripples> */}
                     </div>
                   </div>
                 </div>
