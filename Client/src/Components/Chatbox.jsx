@@ -232,10 +232,10 @@ function Chatbox() {
         </div>
       
         
-        <div className='col-span-3 flex flex-col'>
+        <div className='col-span-3  md:h-[95%] flex flex-col' >
           {/* Name display */}
           {/* Chat messages */}
-          <div className='flex flex-row justify-start items-start'>
+          <div className='flex flex-row border   justify-start items-start'>
             <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(to bottom, #FFA500, #FF4500)" }}>
               {loading ?
                 <div className='flex'>
