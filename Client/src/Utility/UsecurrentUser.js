@@ -23,5 +23,5 @@ async function UseCurrentUser(Id)
         console.error('Error:', error);
       }
 }
-UseCurrentUser('665a1285174b061d5dcf72c0')
+
 export default UseCurrentUser

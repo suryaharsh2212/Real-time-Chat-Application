@@ -12,6 +12,7 @@ async function UseGetUsers(currentUser)
         });
     
        const users=await response.json()
+       console.log(users);
       
        
        return users
