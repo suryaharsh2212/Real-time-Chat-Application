@@ -3,7 +3,7 @@
 async function UseCurrentUser(Id)
 {
     try {
-        const response = await fetch('http://localhost:8000/user/getcurrentuser', {
+        const response = await fetch('https://real-time-chat-application-nine-rho.vercel.app/user/getcurrentuser', {
           method: 'POST',
           credentials: "include",
           headers: {

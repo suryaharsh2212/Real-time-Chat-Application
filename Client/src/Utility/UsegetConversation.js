@@ -1,7 +1,7 @@
 export const UsegetConversation=async(senderId,receiverId)=>{
     console.log(senderId,receiverId);
     try {
-        const response = await fetch('http://localhost:8000/user/getConversation', {
+        const response = await fetch('https://real-time-chat-application-nine-rho.vercel.app/user/getConversation', {
           method: 'POST',
           credentials: "include",
           headers: {
