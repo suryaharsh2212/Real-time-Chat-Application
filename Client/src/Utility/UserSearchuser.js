@@ -1,7 +1,7 @@
 async function UseSearchUser(name)
 {
     try {
-        const response = await fetch('http://localhost:8000/user/search', {
+        const response = await fetch('https://real-time-chat-application-backend-giggle.vercel.app/user/search', {
           method: 'POST',
           credentials: "include",
           headers: {

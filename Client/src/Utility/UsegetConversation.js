@@ -1,7 +1,7 @@
 export const UsegetConversation=async(senderId,receiverId)=>{
     console.log(senderId,receiverId);
     try {
-        const response = await fetch('https://real-time-chat-application-nine-rho.vercel.app/user/getConversation', {
+        const response = await fetch('https://real-time-chat-application-backend-giggle.vercel.app/user/getConversation', {
           method: 'POST',
           credentials: "include",
           headers: {
@@ -20,4 +20,4 @@ export const UsegetConversation=async(senderId,receiverId)=>{
         console.error('Error:', error);
       }
 }
-// UsegetConversation("6654e41a7cb9097127d7a238","6654e4457cb9097127d7a23c") 
+//  UsegetConversation("6654e41a7cb9097127d7a238","6654e4457cb9097127d7a23c") 
