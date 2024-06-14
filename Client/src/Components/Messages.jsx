@@ -5,7 +5,7 @@ function Messages({ S_Id, R_Id, message, askstate }) {
   
   useEffect(() => {
    
-    const socket = io('http://localhost:8000');
+    const socket = io('https://real-time-chat-application-backend-giggle.vercel.app');
     socket.on('new-message', (data) => {
       console.log('New message received:', data);
     });
