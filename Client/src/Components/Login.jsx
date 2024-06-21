@@ -149,7 +149,9 @@ export default function Login() {
                   size="20"
                   speed="1.75"
                   color="white"
-                ></l-tail-chase>
+                > runnning</l-tail-chase>
+               
+
                :"Sign in"}
              </button>
            </div>

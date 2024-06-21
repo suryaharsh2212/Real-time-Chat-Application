@@ -4,7 +4,7 @@ import { User } from "../Database/Models/UserModel.js";
 import isValidIndianPhoneNumber from "../Utilities/PhoneNovalidator.js";
 import bcrypt from "bcrypt"
 import genWebToken from "../Utilities/genAccessToken.js";
-import { serialize } from "cookie"
+
 
 const LoginUser = async (req, res) => {
     const response = {
