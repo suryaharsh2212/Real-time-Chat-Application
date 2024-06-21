@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import UseGetUsers from '../Utility/UseGetUser';
-import { sendmessage } from '../Utility/UseSocketConnection';
 import { UseSendMessage } from '../Utility/UseSendmessage';
 import { io } from 'socket.io-client';
 import { UsegetConversation } from '../Utility/UsegetConversation';
@@ -40,7 +39,7 @@ function Chatbox() {
     setsentLoading(true)
     setdatamessage(prevMessages => [...prevMessages, { message, user: id }]);
     setMessage(message);
-    sendmessage(message);
+    UseSendMessage(message);
     await UseSendMessage(message, id, receiverId);
     setsentLoading(false)
     setMessage('');
@@ -52,7 +51,7 @@ function Chatbox() {
       console.log('Connected to server');
     });
 
-    socket.on(`new-message${id}`, ({ message, senderId, receiverId }) => {
+    socket.on(`new-message${id}`, ({ message, senderId }) => {
       Setnewmsg(true);
       setdatamessage(prevMessages => [...prevMessages, { message, user: senderId }]);
     });
