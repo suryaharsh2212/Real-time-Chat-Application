@@ -14,4 +14,5 @@ async function UseGetUsers()
         console.error('Error:', error);
       }
 }
+
 export default UseGetUsers;   

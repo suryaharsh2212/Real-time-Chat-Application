@@ -1,10 +1,15 @@
  import jwt from "jsonwebtoken"
 import { User } from "../Database/Models/UserModel.js"
+import { log } from "console";
  
  
  export const verifyJWT=async(req,res,next)=>{
         try {
+            
+            // console.log(cookies);
+
             const token=req.cookies.access_token || "not found"
+            console.log(token);
         if(!token)
             {
                 res.status(404).json({

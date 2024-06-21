@@ -13,6 +13,7 @@ export const UsegetConversation=async(senderId,receiverId)=>{
     
        const data=await response.json()
        console.log(data);
+       console.log();
        return data
       
     
@@ -20,4 +21,7 @@ export const UsegetConversation=async(senderId,receiverId)=>{
         console.error('Error:', error);
       }
 }
-//  UsegetConversation("6654e41a7cb9097127d7a238","6654e4457cb9097127d7a23c") 
+
+
+
+  UsegetConversation("6654e41a7cb9097127d7a238","6654e4457cb9097127d7a23c") 
