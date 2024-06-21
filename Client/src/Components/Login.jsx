@@ -3,11 +3,9 @@ import UseLogin from "../Utility/useLogin"
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import { useState } from "react";
 import useUserStore from "../GlobalState";
-import { createSocket } from "../Utility/UseSocketConnection"; 
 
 import 'ldrs/tailChase'
 import Auth from "./Auth";
-
 
 export default function Login() {
   const updateId = useUserStore(state => state.updateId);
@@ -52,7 +50,6 @@ export default function Login() {
       {
         success("Login sucesss")
          console.log("updating",response.response.name);
-        createSocket()
         updateId(response.response.id)
         console.log(response.response.id);
         updatename(response.response.name)
