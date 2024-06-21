@@ -14,14 +14,15 @@ async function UseCurrentUser(Id)
         });
     
        const user=await response.json()
+       console.log(user);
       
        
-       return user.data.fullname
+      //  return user.data.fullname 
       
         
       } catch (error) {
         console.error('Error:', error);
       }
 }
-
+// UseCurrentUser('665f5f5e0ff0f28b84da5d36') 
 export default UseCurrentUser

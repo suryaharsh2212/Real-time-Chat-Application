@@ -9,11 +9,6 @@ const getUser = async (req, res) => {
 
     try {
         const users = await User.find();
-        // const filteredUsers = users.filter(user => user._id.toString() !== currentUser._id.toString()); 
-        
-        
-       
-
         response.data = users;
         response.status = true;
         response.message = "Users fetched";

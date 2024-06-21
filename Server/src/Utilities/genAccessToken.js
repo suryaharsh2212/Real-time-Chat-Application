@@ -7,7 +7,7 @@ function genWebToken(userid)
        userid
     },
    process.env.SECRETKEY,
-    { expiresIn: '1h' }
+    { expiresIn: '1d' }
   )
  
 }

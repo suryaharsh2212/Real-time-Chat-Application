@@ -3,9 +3,10 @@ import UseLogin from "../Utility/useLogin"
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import { useState } from "react";
 import useUserStore from "../GlobalState";
-import { createSocket } from "../Utility/UseSocketConnection";
+// import { createSocket } from "../Utility/UseSocketConnection"; 
 
 import 'ldrs/tailChase'
+import Auth from "./Auth";
 
 
 export default function Login() {
@@ -94,6 +95,7 @@ export default function Login() {
          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
            Sign in to your account
          </h2>
+         <Auth/>
        </div>
 
        <div className="mt-10 sm:mx-auto sm:w-full outline-slate-800 p-10  shadow-lg  sm:max-w-sm">
@@ -155,6 +157,7 @@ export default function Login() {
              </button>
            </div>
          </form>
+      
 
          <p className="mt-10 text-center text-sm text-gray-500">
            Not a member?{' '}
