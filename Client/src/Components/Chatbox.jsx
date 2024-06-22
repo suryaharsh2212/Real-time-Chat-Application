@@ -29,6 +29,7 @@ function Chatbox() {
   const [sentLoading, setsentLoading] = useState(false)
   const [chattingwith, setchattingwith] = useState("Choose a user to begin chatting")
   const socket = io('https://real-time-chat-application-backend-giggle.vercel.app');
+  console.log(socket);
   const [Isnewmsg, Setnewmsg] = useState(false)
   const [search, setSearch] = useState('')
   const [searchLoading, setsearchLoading] = useState(false)
