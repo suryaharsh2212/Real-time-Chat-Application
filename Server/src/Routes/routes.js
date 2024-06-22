@@ -13,7 +13,7 @@ const router=Router()
 
 router.route("/login").post(LoginUser)
 router.route("/send").post(verifyJWT,send_msg)
-router.route("/getconversation").post(verifyJWT,getConversation)
+router.route("/getconversation").post(getConversation)
 router.route("/getuser").post(getUser)
 router.route("/registeruser").post(registerUser)
 router.route("/getcurrentuser").post(getCurrentUser)
