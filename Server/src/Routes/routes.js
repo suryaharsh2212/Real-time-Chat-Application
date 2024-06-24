@@ -12,13 +12,13 @@ import searchUser from "../Controllers/sendSearchUser.js";
 const router=Router()
 
 router.route("/login").post(LoginUser)
-router.route("/send").post(verifyJWT,send_msg)
+router.route("/send").post(send_msg)
 router.route("/getconversation").post(getConversation)
 router.route("/getuser").post(getUser)
 router.route("/registeruser").post(registerUser)
 router.route("/getcurrentuser").post(getCurrentUser)
-router.route("/logout").post(verifyJWT,UseLogout)
-router.route("/search").post(verifyJWT,searchUser)
+router.route("/logout").post(UseLogout)
+router.route("/search").post(searchUser)
 
 
 export {router}     

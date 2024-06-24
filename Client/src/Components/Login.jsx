@@ -8,7 +8,9 @@ import 'ldrs/tailChase'
 import Auth from "./Auth";
 
 export default function Login() {
+  const token=useUserStore()
   const updateId = useUserStore(state => state.updateId);
+  const  updateToken=useUserStore(state =>state. updateToken);
   const updatename=useUserStore(state=>state.updateFullName);
   const [phoneNumber, setphonenumber] = useState("")
   const [loading, setloading] = useState(false)
@@ -50,9 +52,11 @@ export default function Login() {
       {
         success("Login sucesss")
          console.log("updating",response.response.name);
+         updateToken(response.response.token)
         updateId(response.response.id)
         console.log(response.response.id);
         updatename(response.response.name)
+        console.log(token);
         setloading(false)
         navigate(`/chatbox/${response.response.id}/${response.response.name}`) 
      
@@ -149,7 +153,7 @@ export default function Login() {
                   size="20"
                   speed="1.75"
                   color="white"
-                > runnning</l-tail-chase>
+                > Loading...</l-tail-chase>
                
 
                :"Sign in"}

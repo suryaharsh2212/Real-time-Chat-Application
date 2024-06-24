@@ -14,10 +14,10 @@ async function UseCurrentUser(Id)
         });
     
        const user=await response.json()
-       console.log(user);
+      //  console.log(user);
       
        
-      //  return user.data.fullname 
+        return user.data.fullname 
       
         
       } catch (error) {
