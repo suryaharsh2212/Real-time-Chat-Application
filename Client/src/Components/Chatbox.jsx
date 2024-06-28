@@ -28,9 +28,9 @@ function Chatbox() {
   const [loading, setloading] = useState(false)
   const [sentLoading, setsentLoading] = useState(false)
   const [chattingwith, setchattingwith] = useState("Choose a user to begin chatting")
-  const socket = io('https://real-time-chat-application-backend-giggle.vercel.app',{
-    auth:"yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2Njc1ZGY5N2Q2NzkwNTg1MDM1NzU0MzYiLCJpYXQiOjE3MTkyNDU4MjAsImV4cCI6MTcxOTMzMjIyMH0.wggUtHHtG9PUqq1xd5dQ4m3GFUYQNnfdrex5zA9QoeI"
-  });
+  const socket = io('https://real-time-chat-application-backend-giggle.vercel.app',
+    {withCredentials: true, }
+  );
   console.log(socket);
   const [Isnewmsg, Setnewmsg] = useState(false)
   const [search, setSearch] = useState('')
