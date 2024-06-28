@@ -29,7 +29,7 @@ function Chatbox() {
   const [sentLoading, setsentLoading] = useState(false)
   const [chattingwith, setchattingwith] = useState("Choose a user to begin chatting")
   const socket = io('https://real-time-chat-application-backend-giggle.vercel.app',{
-    auth:""
+    auth:"yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2Njc1ZGY5N2Q2NzkwNTg1MDM1NzU0MzYiLCJpYXQiOjE3MTkyNDU4MjAsImV4cCI6MTcxOTMzMjIyMH0.wggUtHHtG9PUqq1xd5dQ4m3GFUYQNnfdrex5zA9QoeI"
   });
   console.log(socket);
   const [Isnewmsg, Setnewmsg] = useState(false)
@@ -61,7 +61,7 @@ function Chatbox() {
     return () => {
       socket.disconnect();
     };
-  }, [id, receiverId]);
+  }, []);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -194,16 +194,20 @@ function Chatbox() {
 
           {userLoading
             ?
-            <div className="flex flex-col gap-4 w-52">
-              <div className="skeleton h-32 w-full"></div>
-              <div className="skeleton h-4 w-28"></div>
-              <div className="skeleton h-4 w-full"></div>
-              <div className="skeleton h-4 w-full"></div>
+            <div className="flex flex-col mt-10 gap-4 w-80">
+               <h1 className='ml-5 font-light '> Loading your Chats......</h1>
+              <div className="skeleton h-32  w-full"></div>
+              <div className="skeleton h-6 w-full"></div>
+              <div className="skeleton h-6 w-full"></div>
+              <div className="skeleton h-6 w-full"></div>
+            
+             
+             
             </div>
             :
             <>
               {Users.map((element, index) => (
-                <button key={index} onClick={() => passdata(element)} className="w-full  btn bg-gradient-to-r  text-white  mb-5   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 outline-red-500 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(to bottom, 135deg, #B2FEFA 10%, #0ED2F7 100%)" }}>
+                <button key={index} onClick={() => passdata(element)} className="w-full  btn bg-gradient-to-r  text-white  mb-5   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(to bottom, 135deg, #B2FEFA 10%, #0ED2F7 100%)" }}>
                   <div className="avatar online ml-6 ">
                     <div className="w-10 h-10 rounded-full" >
                       <img src={`${UserandomImages()}`} alt="avatar" />
@@ -220,24 +224,15 @@ function Chatbox() {
                       <></>
                     }
                   </div>
-
-
                 </button>
               ))}
             </>
           }
-          <hr/>
-          
-
-
-
         </div>
-      
-        
         <div className='col-span-3  md:h-[95%] flex flex-col' >
           {/* Name display */}
           {/* Chat messages */}
-          <div className='flex flex-row border   justify-start items-start'>
+          <div className='flex flex-row  justify-start items-start'>
             <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(to bottom, #FFA500, #FF4500)" }}>
               {loading ?
                 <div className='flex'>
@@ -270,20 +265,8 @@ function Chatbox() {
                 <div className='flex justify-center items-center mt-36 '>
                   <div className='flex flex-col'>
                     <h1 className='btn font-light mb-5'> Select a conversation to start........</h1>
-                    {/* <l-helix
-                      size="200"
-                      speed="4.5"
-                      color="cyan"
-                    ></l-helix> */}
-
-
-
-                    <div className='flex justify-center' >
-                      {/* <l-ripples
-                      size="300"
-                      speed="4.5"
-                      color="whitesmoke"
-                    ></l-ripples> */}
+            
+                    <div className='flex justify-center' > 
                     </div>
                   </div>
                 </div>
@@ -297,10 +280,6 @@ function Chatbox() {
                         <div className={`chat chat-${task}`}>
                           <div className={`chat-bubble ${colour} text-black`}> {value.message}</div>
                         </div>
-                        {/* <div className={`chat chat-end`}>
-                          <div className={`chat-bubble ${colour} text-black`}> {value.message}</div>
-                        </div> */}
-
                       </div>
 
                     )
