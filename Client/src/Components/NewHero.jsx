@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function NewHero() {
     return (
         <div>
-            <div className='md:h-full' style={{ backgroundImage:"linear-gradient(skyblue,#62cff4,#2c67f2,blue)" }}>
+            <div className='md:h-full' style={{ backgroundImage: "linear-gradient(#62cff4,#2c67f2)" }}>
                 {/* header  */}
                 <div className='w-full h-20 '  >
 
@@ -92,7 +92,7 @@ function NewHero() {
                             <p className="py-6">
                                 Giggle is a dynamic and user-friendly chat application designed to bring people closer through seamless communication. Whether you're connecting with friends, family, or colleagues, Giggle offers a robust platform that prioritizes simplicity and reliability. With intuitive interface features and a wide range of customization options, users can personalize their chat experience to suit their preferences. From instant messaging to group chats and file sharing, Giggle ensures that staying connected is both convenient and enjoyable. Emphasizing security and privacy, Giggle provides a safe environment for users to interact, making it the go-to choice for modern communication needs.
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,25 @@ function NewHero() {
                             <img className="h-10 w-10 rounded-full " src="https://cdn-icons-png.flaticon.com/128/4488/4488418.png" alt="error" />
                             <h1 className=' font-extrabold text-sky-400 ml-2 mt-3'>About Giggle</h1>
                         </div>
-                        Chat UI is more and more popular in our daily lives. More and more teams, designers and developers are working hard on chat UI design to improve user experience and make chat UI more interactive. On this page, we will share a curated collection of chat UI designed by some best talents from the world to inspire you and spark new ideas for your design process.
+                        I've created a real-time chat application using WebSockets, allowing users to engage in instant messaging with anyone available to respond. This platform ensures seamless communication, enabling dynamic interactions and timely responses. Whether you're connecting with friends, colleagues, or new acquaintances. available to respond. This platform ensures seamless communication, enabling dynamic interactions and timely responses. Whether you're connecting with friends, or someone special. 
+                    </div>
+                </div>
+                <div className='h-1/2 md:1/3  p-4'>
+                    <div className='bg-whitesmoke rounded-md shadow-lg p-5 hover:outline hover:shadow-xl'>
+                        <div className="flex p-2">
+                            <img className="h-10 w-10 rounded-full " src="https://cdn-icons-png.flaticon.com/128/12449/12449005.png" alt="error" />
+                            <h1 className=' font-extrabold text-sky-400 ml-2 mt-3'>Tech Stack</h1>
+                        </div>
+
+                       
+
+                        I've developed this project using a powerful tech stack to ensure efficiency and a seamless user experience. The frontend is built with React and Vite, leveraging their speed and flexibility. Tailwind CSS was used for styling, providing a utility-first approach for consistent design.
+
+                        On the backend, Node.js handles server-side logic, while MongoDB with Mongoose manages the database for reliable data storage and retrieval.
+
+                        For version control and collaboration, I've relied on GitHub, and the project is deployed and hosted on Vercel, ensuring smooth deployment and scalability.
+
+                        
                     </div>
                 </div>
                 <div className='h-1/2 md:1/3  p-4'>
@@ -113,18 +131,10 @@ function NewHero() {
                             <img className="h-10 w-10 rounded-full " src="https://cdn-icons-png.flaticon.com/128/9977/9977254.png" alt="error" />
                             <h1 className=' font-extrabold text-sky-400 ml-2 mt-3'>About me</h1>
                         </div>
-                        Chat UI is more and more popular in our daily lives. More and more teams, designers and developers are working hard on chat UI design to improve user experience and make chat UI more interactive. On this page, we will share a curated collection of chat UI designed by some best talents from the world to inspire you and spark new ideas for your design process.
+                        Hello! I'm Surya Prakash, currently in my 2nd year of B.Tech in Computer Science. I am passionate about full-stack development and dedicated to furthering my skills in this field. Chat UI has become increasingly integral in our daily lives, influencing how we connect and collaborate. As a developer, I am fascinated by the evolving landscape of chat UI design. On this page, I curate a collection of inspiring chat UI designs crafted by talented individuals worldwide.
                     </div>
                 </div>
-                <div className='h-1/2 md:1/3  p-4'>
-                    <div className='bg-whitesmoke rounded-md shadow-lg p-5 hover:outline hover:shadow-xl'>
-                        <div className="flex p-2">
-                            <img className="h-10 w-10 rounded-full " src="https://cdn-icons-png.flaticon.com/128/12449/12449005.png" alt="error" />
-                            <h1 className=' font-extrabold text-sky-400 ml-2 mt-3'>About Giggle</h1>
-                        </div>
-                        Chat UI is more and more popular in our daily lives. More and more teams, designers and developers are working hard on chat UI design to improve user experience and make chat UI more interactive. On this page, we will share a curated collection of chat UI designed by some best talents from the world to inspire you and spark new ideas for your design process.
-                    </div>
-                </div>
+               
 
 
 
@@ -132,7 +142,7 @@ function NewHero() {
 
 
             </div>
-            <footer className="footer footer-center bg-primary text-primary-content p-10">
+            <footer className="footer footer-center bg-primary text-primary-content mt-10 p-10">
                 <aside>
 
                     <p className="font-bold">
