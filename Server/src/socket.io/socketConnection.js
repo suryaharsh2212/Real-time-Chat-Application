@@ -10,7 +10,8 @@ const server = http.createServer(app);
 const io = new Server(server,{
   cors:{
     origin:"https://real-time-chat-application-uyhn.vercel.app",
-    methods:["GET","POST"]
+    methods:["GET","POST"],
+    credentials: true,
   }
 });
 
@@ -19,11 +20,6 @@ io.on('connection', (socket) => {
   console.log("someone connected");
   socket.on('disconnect', () => {
    console.log("someone disconnected");
-  });
-
-  socket.on('send-message', (message) => {
-    // console.log('Message received:', message); 
-     io.emit('new-message', ({message})); 
   });
 });
 
