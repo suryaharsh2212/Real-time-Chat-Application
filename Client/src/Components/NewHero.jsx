@@ -148,9 +148,9 @@ function NewHero() {
                     <p className="font-bold">
                         Made By Surya Prakash
                         <br />
-                        <h1 className='font-semibold'>suryaraj04266@gmail.com</h1>
+                        <h1 className='font-semibold'>suryaraj04266@gmail.com | 7488491434</h1>
                     </p>
-                    <p>Copyright © ${new Date().getFullYear()} - All right reserved</p>
+                    <p>{new Date().getDate()} </p>
                 </aside>
                 <nav>
                     <div className="grid grid-flow-col gap-4">
