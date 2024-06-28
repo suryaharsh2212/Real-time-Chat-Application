@@ -1,5 +1,4 @@
 
-import { log } from 'console';
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
@@ -16,7 +15,6 @@ const io = new Server(server,{
 });
 
 io.on('connection', (socket) => {
-  
   console.log("someone connected");
   socket.on('disconnect', () => {
    console.log("someone disconnected");
