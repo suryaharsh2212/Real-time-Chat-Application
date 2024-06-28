@@ -46,9 +46,6 @@ const LoginUser = async (req, res) => {
             secure: true,
             sameSite: "lax",
         }).json({response});
-
-
-
         }
 
     } catch (error) {

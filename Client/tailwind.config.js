@@ -10,6 +10,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Roboto', 'Open Sans', 'Josefin sans'],
+      },
       keyframes: {
         animatedgradient: {
           '0%': { backgroundPosition: '0% 50%' },
@@ -21,7 +24,7 @@ export default {
         '300%': '300%',
       },
       animation: {
-        gradient: 'animatedgradient 6s ease infinite alternate',
+        gradient: 'animatedgradient 15s ease infinite alternate',
       },
     },
   },
