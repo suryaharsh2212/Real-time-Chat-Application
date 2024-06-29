@@ -2,11 +2,18 @@
 import { io } from "socket.io-client";
 
 // Replace with your backend URL
-const socket = io('https://real-time-chat-application-backend-giggle.vercel.app',{
-  credentials: "include",
-  secure:true,
+const socket = io('https://real-time-chat-application-backend-giggle.vercel.app',
+  {
  
-});
+    withCredentials:true,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Credentials': true
+        },
+
+  }
+ 
+);
 // const socket=io ('http://localhost:8000') 
 console.log(socket);
 

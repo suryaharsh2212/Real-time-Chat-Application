@@ -31,9 +31,14 @@ function Chatbox() {
   const socket = io('https://real-time-chat-application-backend-giggle.vercel.app',
     {
       credentials: "include",
-     secure:true,
+      withCredentials:true,
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Credentials': true
+          },
+
     }
- 
+   
   );
   console.log(socket);
   const [Isnewmsg, Setnewmsg] = useState(false)
