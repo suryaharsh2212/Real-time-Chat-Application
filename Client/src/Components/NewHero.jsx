@@ -150,7 +150,7 @@ function NewHero() {
                         <br />
                         <h1 className='font-semibold'>suryaraj04266@gmail.com | 7488491434</h1>
                     </p>
-                    <p>{new Date().getDate()} </p>
+                    <p>{new Date().getDate()}/{new Date().getMonth()}/{new Date().getFullYear()} </p>
                 </aside>
                 <nav>
                     <div className="grid grid-flow-col gap-4">
