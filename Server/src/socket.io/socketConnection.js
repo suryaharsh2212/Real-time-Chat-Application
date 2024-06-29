@@ -10,7 +10,8 @@ const io = new Server(server,{
   cors:{
     origin:"https://real-time-chat-application-uyhn.vercel.app",
     methods:["GET","POST"],
-    credentials:true
+    credentials:true,
+    allowedHeaders: ["my-custom-header"],
   }
 });
 

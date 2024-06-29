@@ -30,12 +30,10 @@ function Chatbox() {
   const [chattingwith, setchattingwith] = useState("Choose a user to begin chatting")
   const socket = io('https://real-time-chat-application-backend-giggle.vercel.app',
     {
-      credentials: "include",
-      withCredentials:true,
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Credentials': true
-          },
+      withCredentials: true,
+  extraHeaders: {
+    "my-custom-header": "abcd"
+  }
 
     }
    
