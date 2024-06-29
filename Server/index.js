@@ -14,6 +14,7 @@ app.use(cors({
     origin: 'https://real-time-chat-application-uyhn.vercel.app',
     credentials: true,
     withCredentials: true,
+    // allowedHeaders: ["my-custom-header"], 
 }));
 app.use(cookieParser())
 app.use(express.urlencoded({extended:false}))
@@ -21,7 +22,7 @@ app.use(express.json({limit:"20kb"}))
 app.use("/user",router)
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://real-time-chat-application-uyhn.vercel.app')
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization,my-custom-header')
     res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
     res.setHeader('Access-Control-Allow-Credentials', 'true')
 })
