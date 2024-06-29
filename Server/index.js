@@ -11,7 +11,7 @@ import cors from "cors"
 connecttoMongo()
 
 app.use(cors({ 
-    origin: 'https://real-time-chat-application-uyhn.vercel.app/chatbox/6675df97d679058503575436/Surya%20%20Prakash',
+    origin: 'https://real-time-chat-application-uyhn.vercel.app',
     credentials: true,
     withCredentials: true,
 }));
