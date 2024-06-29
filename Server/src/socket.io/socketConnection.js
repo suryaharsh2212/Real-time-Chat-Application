@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = new Server(server,{
   cors:{
-    origin:"https://real-time-chat-application-uyhn.vercel.app",
+    origin:"https://real-time-chat-application-uyhn.vercel.app/chatbox/6675df97d679058503575436/Surya%20%20Prakash",
     methods:["GET","POST"],
     credentials: true,
   }
