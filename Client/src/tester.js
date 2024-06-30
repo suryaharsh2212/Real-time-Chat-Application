@@ -2,14 +2,12 @@
 import { io } from "socket.io-client";
 
 // Replace with your backend URL
-const socket = io('https://real-time-chat-application-rho.vercel.app/',
+const socket = io('https://real-time-chat-application-backend-giggle.vercel.app',
   {
- 
-    withCredentials:true,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Credentials': true
-        },
+    path:"/socket",
+    reconnection:true,
+    transports:['websocket','polling'],
+     reconnectionAttempts:5,
 
   }
  
