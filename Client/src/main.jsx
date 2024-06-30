@@ -18,8 +18,6 @@ const router=createBrowserRouter(
          <Route path='/login' element={<Login/>}/>
          <Route path='/register' element={<RegisterUser/>}/>
          <Route path='/chatbox/:id/:name' element={<Chatbox/>}/> 
-        
-
   </Route>
   
 

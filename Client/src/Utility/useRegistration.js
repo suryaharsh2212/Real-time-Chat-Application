@@ -1,7 +1,7 @@
 async function UseRegisterUser(fullname,phoneno,password)
 {
     try {
-        const response = await fetch('https://real-time-chat-application-backend-giggle.vercel.app/user/registeruser', {
+        const response = await fetch('https://real-time-chat-application-rho.vercel.app/user/registeruser', {
           method: 'POST',
           credentials: "include",
           headers: {

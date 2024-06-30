@@ -15,7 +15,7 @@ const socket = io('https://real-time-chat-application-rho.vercel.app/',
  
 );
 // const socket=io ('http://localhost:8000') 
-// console.log(socket); 
+console.log(socket); 
 
 // Event listeners to handle connection and errors
 socket.on('connect', () => {
