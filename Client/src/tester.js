@@ -9,7 +9,7 @@ const socket = io('https://real-time-chat-application-backend-giggle.vercel.app'
     transports:['websocket','polling'],
      reconnectionAttempts:5,
 
-  }
+  }  
  
 );
 // const socket=io ('http://localhost:8000') 
