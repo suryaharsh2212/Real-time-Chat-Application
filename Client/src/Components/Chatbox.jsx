@@ -84,7 +84,7 @@ function Chatbox() {
       }
     };
     fetchUsers();
-  }, [id, search]);
+  }, []);
 
   useEffect(() => {
     const fetchdata = async () => {
