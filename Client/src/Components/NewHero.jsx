@@ -142,7 +142,7 @@ function NewHero() {
 
 
             </div>
-            <footer className="footer footer-center bg-primary text-primary-content mt-10 p-10">
+            <footer className="footer footer-center bg-primary text-primary-content mt-32 p-10">
                 <aside>
 
                     <p className="font-bold">

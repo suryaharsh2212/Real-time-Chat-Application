@@ -15,9 +15,10 @@ const io = new Server(server,{
   cors:{
     origin:"*",
     methods:["GET","POST"],
-    // credentials:true,
+    credentials:true,
     // allowedHeaders: ["my-custom-header"], 
   }
+  
 });
 
 io.on('connection', (socket) => {
