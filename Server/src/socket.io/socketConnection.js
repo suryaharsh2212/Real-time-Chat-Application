@@ -8,15 +8,15 @@ const app=express()
 const server = http.createServer(app);
 
 const io = new Server(server,{
-  // path:"/socket",
+  path:"/socket",
   // wsEngine:['ws','wss'],
   // allowEIO3:true,
-  // transports:['websocket','polling'],
+  transports:['websocket','polling'],
   cors:{
     origin:"*",
     methods:["GET","POST"],
     credentials:true,
-    // allowedHeaders: ["my-custom-header"], 
+    allowedHeaders: ["my-custom-header"], 
   }
   
 });
