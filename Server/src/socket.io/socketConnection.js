@@ -7,18 +7,7 @@ import { Server } from 'socket.io';
 const app=express()
 const server = http.createServer(app);
 
-const io = io('https://real-time-chat-application-backend-giggle.vercel.app',
-  {
-    path:"/socket",
-    transports:['websocket','polling'],
-    // reconnection:true,
-    // transports:['websocket','polling'],
-    //  reconnectionAttempts:5,
-    withCredentials:true,
-
-  }
- 
-)
+const io = io();
 
 io.on('connection', (socket) => {
   console.log("someone connected");
