@@ -34,6 +34,7 @@ function Chatbox() {
       // reconnection:true,
       // transports:['websocket','polling'],
       //  reconnectionAttempts:5,
+      withCredentials:true,
 
     }
    
