@@ -12,7 +12,7 @@ export const UsegetConversation=async(senderId,receiverId)=>{
         });
     
        const data=await response.json()
-       console.log(data);
+       console.log(data.data.messages);
        return data
       
     
