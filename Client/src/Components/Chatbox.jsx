@@ -61,9 +61,7 @@ function Chatbox() {
 
   };
   useEffect(() => {
-    // socket.on('connect', () => {
-    //   console.log('Connected to server');
-    // });
+  
 
     // socket.on(`new-message${id}`, ({ message, senderId }) => {
     //   Setnewmsg(true);
