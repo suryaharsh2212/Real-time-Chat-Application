@@ -1,5 +1,6 @@
 import { Message } from "../Database/Models/Messagemodel.js";
-import { io } from "../socket.io/socketConnection.js";
+import { triggerEvent } from "../Utilities/ably.js";
+// import { io } from "../socket.io/socketConnection.js"; 
 const send_msg = async (req, res) => {
     const response = {
         message: "No msg",
@@ -23,7 +24,8 @@ const send_msg = async (req, res) => {
                 users: [senderId, receiverId],
                 messages: [{ user: senderId, message: message }]
             });
-            io.emit(`new-message${receiverId._id}`,{message,senderId,receiverId})
+            // io.emit(`new-message${receiverId._id}`,{message,senderId,receiverId}) 
+            triggerEvent(`${receiverId._id}`,'new-message',{ text: message, })
 
             response.message = message;
             response.status = "active";

@@ -14,6 +14,8 @@ import UseLogoutUser from '../Utility/Uselogout';
 import { UserandomImages } from '../Utility/Usegetimages';
 import UseSearchUser from '../Utility/UserSearchuser';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
+import Ably from 'ably'
+
 
 
 
@@ -28,19 +30,19 @@ function Chatbox() {
   const [loading, setloading] = useState(false)
   const [sentLoading, setsentLoading] = useState(false)
   const [chattingwith, setchattingwith] = useState("Choose a user to begin chatting")
-  const socket = io(`https://real-time-chat-application-backend-giggle.vercel.app`,
-    {
-      path:"/socket",
-      transports:['websocket','polling'],
-      // reconnection:true,
-      // transports:['websocket','polling'],
-      //  reconnectionAttempts:5,
-      withCredentials:true,
+  // const socket = io(`https://real-time-chat-application-backend-giggle.vercel.app`,
+  //   {
+  //     path:"/socket",
+  //     transports:['websocket','polling'],
+  //     // reconnection:true,
+  //     // transports:['websocket','polling'],
+  //     //  reconnectionAttempts:5,
+  //     withCredentials:true,
 
-    }
-   
-  );
-  console.log(socket);
+  //   }
+  // );
+  const ably = new Ably.Realtime('OIeztA.vtaYyw:uGJV4_D5wkf4pihnv8M6TcWiyrjaeQSmL1OrCODpIsc')
+
   const [Isnewmsg, Setnewmsg] = useState(false)
   const [search, setSearch] = useState('')
   const [searchLoading, setsearchLoading] = useState(false)
@@ -59,18 +61,25 @@ function Chatbox() {
 
   };
   useEffect(() => {
-    socket.on('connect', () => {
-      console.log('Connected to server');
-    });
+    // socket.on('connect', () => {
+    //   console.log('Connected to server');
+    // });
 
-    socket.on(`new-message${id}`, ({ message, senderId }) => {
+    // socket.on(`new-message${id}`, ({ message, senderId }) => {
+    //   Setnewmsg(true);
+    //   setdatamessage(prevMessages => [...prevMessages, { message, user: senderId }]);
+    // });
+    const channel = ably.channels.get(`${id}`)
+    channel.subscribe("new-message", (msg) => {
+      console.log(msg.data);
+      alert('new message received')
       Setnewmsg(true);
-      setdatamessage(prevMessages => [...prevMessages, { message, user: senderId }]);
-    });
+      //  setdatamessage(prevMessages => [...prevMessages, { message, user: senderId }]);
+    })
     return () => {
-      socket.disconnect();
+      channel.unsubscribe()
     };
-  }, []);
+  }, );
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -183,7 +192,7 @@ function Chatbox() {
       />
       <div className='md:grid md:grid-cols-4 p-5 h-screen'>
 
-      <div className='md:col-span-1 p-4 overflow-y-scroll h-[100%]  relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
+        <div className='md:col-span-1 p-4 overflow-y-scroll h-[100%]  relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
           <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(#ff8c00,#ff4500)" }}>Welcome, {name}</h1>
           <div className="pt-2 relative mx-auto  text-gray-600  mb-5 p-2" >
             <input value={search} autoComplete='off' onChange={(e) => { setSearch(e.target.value) }} className="border-2 border-gray-300 bg-white w-full h-10 px-5 pr-16 rounded-lg text-sm outline-orange-600 focus:outline-none"
@@ -204,14 +213,14 @@ function Chatbox() {
           {userLoading
             ?
             <div className="flex flex-col mt-10 gap-4 w-80">
-               <h1 className='ml-5 font-light '> Loading your Chats......</h1>
+              <h1 className='ml-5 font-light '> Loading your Chats......</h1>
               <div className="skeleton h-32  w-full"></div>
               <div className="skeleton h-6 w-full"></div>
               <div className="skeleton h-6 w-full"></div>
               <div className="skeleton h-6 w-full"></div>
-            
-             
-             
+
+
+
             </div>
             :
             <>
@@ -274,8 +283,8 @@ function Chatbox() {
                 <div className='flex justify-center items-center mt-36 '>
                   <div className='flex flex-col'>
                     <h1 className='btn font-light mb-5'> Select a conversation to start........</h1>
-            
-                    <div className='flex justify-center' > 
+
+                    <div className='flex justify-center' >
                     </div>
                   </div>
                 </div>
@@ -312,7 +321,7 @@ function Chatbox() {
                 {sentLoading
                   ?
                   <div>
-                   <span className="loading loading-spinner loading-md"></span>
+                    <span className="loading loading-spinner loading-md"></span>
                   </div>
                   :
                   <div className='text-md'>Send</div>
