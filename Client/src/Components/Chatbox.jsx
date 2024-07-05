@@ -91,7 +91,7 @@ function Chatbox() {
       }
     };
     fetchUsers();
-  }, []);
+  }, );
 
   useEffect(() => {
     const fetchdata = async () => {
