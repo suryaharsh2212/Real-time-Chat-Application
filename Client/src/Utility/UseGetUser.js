@@ -9,10 +9,13 @@ async function UseGetUsers()
             },
         });
        const users=await response.json();
+      //  console.log(users); 
+       
        return users;
       } catch (error) {
         console.error('Error:', error);
       }
 }
+// UseGetUsers() 
 
 export default UseGetUsers;   
