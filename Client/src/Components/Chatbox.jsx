@@ -75,7 +75,7 @@ function Chatbox() {
       channel.unsubscribe() 
      
     };
-  }, );
+  },[id,ably.channels] );
 
   useEffect(() => {
     const fetchUsers = async () => {
