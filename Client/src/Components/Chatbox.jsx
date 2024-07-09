@@ -41,10 +41,10 @@ function Chatbox() {
     setsentLoading(true)
     setdatamessage(prevMessages => [...prevMessages, { message, user: id }]);
     setMessage(message);
-    UseSendMessage(message);
+    // await UseSendMessage(message); 
     await UseSendMessage(message, id, receiverId);
     const conversation = await UsegetConversation(id, receiverId._id);
-     setdatamessage(conversation.data.messages || []);
+    setdatamessage(conversation.data.messages || []);
     setsentLoading(false)
     setMessage('');
 

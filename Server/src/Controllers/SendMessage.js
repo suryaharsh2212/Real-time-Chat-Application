@@ -8,7 +8,7 @@ const send_msg = async (req, res) => {
     };
     try {
         const { message, senderId, receiverId } = req.body;
-        console.log(req.body.me);
+        // console.log(req.body.me); 
         const conversation = await Message.findOne({
             users: {
                 $all: [

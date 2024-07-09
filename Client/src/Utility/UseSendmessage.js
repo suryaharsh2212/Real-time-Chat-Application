@@ -14,7 +14,7 @@ export const UseSendMessage=async(message,senderId,receiverId)=>{
         });
     
        const data=await response.json()
-       console.log(data);
+      //  console.log(data); 
        return data
        
       
