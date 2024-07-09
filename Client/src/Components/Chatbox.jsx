@@ -68,7 +68,7 @@ function Chatbox() {
        Setnewmsg(true);
        setMessage(msg.data.text)
        console.log(msg);
-       setdatamessage(prevMessages => [...prevMessages, { message, user: msg.senderId}]);
+       setdatamessage(prevMessages => [...prevMessages, { message, user: msg.data.senderId}]);
     })
     return () => {
       channel.unsubscribe() 
