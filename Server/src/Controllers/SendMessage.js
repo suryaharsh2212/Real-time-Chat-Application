@@ -9,8 +9,9 @@ const send_msg = async (req, res) => {
     };
     try {
         const { message, senderId, receiverId } = req.body;
-
-        
+        console.log(req.body.me);
+        // console.log(receiverId);
+        // console.log(senderId);
         const conversation = await Message.findOne({
             users: {
                 $all: [
@@ -25,7 +26,7 @@ const send_msg = async (req, res) => {
                 messages: [{ user: senderId, message: message }]
             });
             // io.emit(`new-message${receiverId._id}`,{message,senderId,receiverId}) 
-            triggerEvent(`${receiverId._id}`,'new-message',{ text: message, })
+            triggerEvent(`${receiverId._id}`,'new-message',{ text: message,senderId })
 
             response.message = message;
             response.status = "active";
@@ -39,7 +40,8 @@ const send_msg = async (req, res) => {
                 { _id: conversation._id },
                 { $push: { messages: newMessage }}
             );
-            io.emit(`new-message${receiverId._id}`,{message,senderId,receiverId})
+            // io.emit(`new-message${receiverId._id}`,{message,senderId,receiverId}) 
+            triggerEvent(`${receiverId._id}`,'new-message',{ text: message,senderId })
             response.message=message;
             response.status="active"
             response.sent="true"

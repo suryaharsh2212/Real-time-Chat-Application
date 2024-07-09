@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import UseGetUsers from '../Utility/UseGetUser';
 import { UseSendMessage } from '../Utility/UseSendmessage';
-import { io } from 'socket.io-client';
+// import { io } from 'socket.io-client'; 
 import { UsegetConversation } from '../Utility/UsegetConversation';
 import UseCurrentUser from '../Utility/UsecurrentUser';
 import 'ldrs/helix'
@@ -30,18 +30,10 @@ function Chatbox() {
   const [loading, setloading] = useState(false)
   const [sentLoading, setsentLoading] = useState(false)
   const [chattingwith, setchattingwith] = useState("Choose a user to begin chatting")
-  // const socket = io(`https://real-time-chat-application-backend-giggle.vercel.app`,
-  //   {
-  //     path:"/socket",
-  //     transports:['websocket','polling'],
-  //     // reconnection:true,
-  //     // transports:['websocket','polling'],
-  //     //  reconnectionAttempts:5,
-  //     withCredentials:true,
-
-  //   }
+  // const socket = io(`https://localhost:8000`,
+    
   // );
-  const ably = new Ably.Realtime('OIeztA.vtaYyw:uGJV4_D5wkf4pihnv8M6TcWiyrjaeQSmL1OrCODpIsc')
+  const ably = new Ably.Realtime('OIeztA.vtaYyw:uGJV4_D5wkf4pihnv8M6TcWiyrjaeQSmL1OrCODpIsc') 
 
   const [Isnewmsg, Setnewmsg] = useState(false)
   const [search, setSearch] = useState('')
@@ -55,6 +47,8 @@ function Chatbox() {
     setMessage(message);
     UseSendMessage(message);
     await UseSendMessage(message, id, receiverId);
+    const conversation = await UsegetConversation(id, receiverId._id);
+      setdatamessage(conversation.data.messages || []);
     setsentLoading(false)
     setMessage('');
 
@@ -69,13 +63,15 @@ function Chatbox() {
     // });
     const channel = ably.channels.get(`${id}`)
     channel.subscribe("new-message", (msg) => {
-      console.log(msg.data);
-      alert('new message received')
-      Setnewmsg(true);
-      //  setdatamessage(prevMessages => [...prevMessages, { message, user: senderId }]);
+      console.log(msg);
+      // alert('new message received') 
+       Setnewmsg(true);
+       console.log(msg);
+       setdatamessage(prevMessages => [...prevMessages, { message, user: msg.senderId}]);
     })
     return () => {
-      channel.unsubscribe()
+      channel.unsubscribe() 
+     
     };
   }, );
 
