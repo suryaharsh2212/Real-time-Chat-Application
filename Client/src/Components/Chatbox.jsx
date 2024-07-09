@@ -41,7 +41,7 @@ function Chatbox() {
     setsentLoading(true)
     setdatamessage(prevMessages => [...prevMessages, { message, user: id }]);
     setMessage(message);
-    // await UseSendMessage(message); 
+    await UseSendMessage(message); 
     await UseSendMessage(message, id, receiverId);
     const conversation = await UsegetConversation(id, receiverId._id);
     setdatamessage(conversation.data.messages || []);
@@ -51,9 +51,6 @@ function Chatbox() {
 
   };
   useEffect(() => {
-  
-
-    
     const channel = ably.channels.get(`${id}`)
     channel.subscribe("new-message", (msg) => {
        Setnewmsg(true);
