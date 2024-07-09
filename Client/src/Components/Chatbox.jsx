@@ -63,10 +63,10 @@ function Chatbox() {
     // });
     const channel = ably.channels.get(`${id}`)
     channel.subscribe("new-message", (msg) => {
-      console.log(msg);
+      console.log(msg.data.text);
       // alert('new message received') 
        Setnewmsg(true);
-       console.log(msg);
+      //  console.log(msg);
        setdatamessage(prevMessages => [...prevMessages, { message, user: msg.senderId}]);
     })
     return () => {
