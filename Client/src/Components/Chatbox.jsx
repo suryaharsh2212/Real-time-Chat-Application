@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import UseGetUsers from '../Utility/UseGetUser';
 import { UseSendMessage } from '../Utility/UseSendmessage';
-// import { io } from 'socket.io-client'; 
 import { UsegetConversation } from '../Utility/UsegetConversation';
 import UseCurrentUser from '../Utility/UsecurrentUser';
 import 'ldrs/helix'
@@ -30,9 +29,6 @@ function Chatbox() {
   const [loading, setloading] = useState(false)
   const [sentLoading, setsentLoading] = useState(false)
   const [chattingwith, setchattingwith] = useState("Choose a user to begin chatting")
-  // const socket = io(`https://localhost:8000`,
-    
-  // );
   const ably = new Ably.Realtime('OIeztA.vtaYyw:uGJV4_D5wkf4pihnv8M6TcWiyrjaeQSmL1OrCODpIsc') 
 
   const [Isnewmsg, Setnewmsg] = useState(false)
@@ -48,7 +44,7 @@ function Chatbox() {
     UseSendMessage(message);
     await UseSendMessage(message, id, receiverId);
     const conversation = await UsegetConversation(id, receiverId._id);
-      setdatamessage(conversation.data.messages || []);
+     setdatamessage(conversation.data.messages || []);
     setsentLoading(false)
     setMessage('');
 
@@ -57,17 +53,10 @@ function Chatbox() {
   useEffect(() => {
   
 
-    // socket.on(`new-message${id}`, ({ message, senderId }) => {
-    //   Setnewmsg(true);
-    //   setdatamessage(prevMessages => [...prevMessages, { message, user: senderId }]);
-    // });
+    
     const channel = ably.channels.get(`${id}`)
     channel.subscribe("new-message", (msg) => {
-      console.log(msg.data.text);
-      // alert('new message received') 
        Setnewmsg(true);
-    
-       console.log(msg);
        const rec=msg.data.text 
        setdatamessage(prevMessages => [...prevMessages, { message:rec, user: msg.data.senderId}]);
     })

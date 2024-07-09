@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import isValidIndianPhoneNumber from '../Utility/usephonenumberchecker.js';
-import { Audio } from 'react-loader-spinner'
 import { Link, useNavigate } from 'react-router-dom';
 import UseRegisterUser from '../Utility/useRegistration.js';
 import Auth from './Auth.jsx';
@@ -53,15 +52,12 @@ const RegisterUser = () => {
     }
     
     else {
-     
       setloading(false) 
-      
       setShowAuth(true) 
       const response = await UseRegisterUser(fullname, phoneNumber, password)
       if (response.error) {
         notify(response.message)
         setloading(true)
-
       }
       else {
         success(response.message)
@@ -88,15 +84,10 @@ const RegisterUser = () => {
         transition={Bounce}
       />
        {showAuth===true? <Auth />:null}
-
-
       <div className="h-screen  md:flex">
         <div className="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden"  >
           <div>
             <div className='z-10  opacity-20'>
-
-
-
               <l-grid
                 size="200"
                 speed="5.5"
@@ -143,7 +134,6 @@ const RegisterUser = () => {
             <button type="submit" className="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">
               {loading
                 ? "Register"
-
                 :
                 <l-tail-chase
                   size="25"

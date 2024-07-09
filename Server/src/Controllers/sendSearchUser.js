@@ -12,7 +12,6 @@ const searchUser = async (req, res) => {
         const users = await User.find({
             fullname: name 
         });
-        // console.log(users);
         if (users.length === 0) {
             response.message = "No users found with that name.";
             return res.status(404).json(response);
