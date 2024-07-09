@@ -66,7 +66,7 @@ function Chatbox() {
       console.log(msg.data.text);
       // alert('new message received') 
        Setnewmsg(true);
-      //  setMessage(msg.data.text) 
+    
        console.log(msg);
        const rec=msg.data.text
        setdatamessage(prevMessages => [...prevMessages, { rec, user: msg.data.senderId}]);
