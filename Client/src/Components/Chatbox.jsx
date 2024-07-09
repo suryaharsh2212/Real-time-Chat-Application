@@ -175,7 +175,7 @@ function Chatbox() {
         theme="light"
         transition={Bounce}
       />
-      <div className='md:grid md:grid-cols-4 p-5 h-screen'>
+      <div className='md:grid md:grid-cols-4 p-5 h-screen bg-slate-900'>
 
         <div className='md:col-span-1 p-4 overflow-y-scroll h-[100%]  relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
           <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(#ff8c00,#ff4500)" }}>Welcome, {name}</h1>
