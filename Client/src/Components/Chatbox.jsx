@@ -238,7 +238,7 @@ function Chatbox() {
                 </div>
               }
             </h1>
-            <div data-tip={"Logout"} className=' tooltip tooltip-bottom'>
+            <div data-tip={"Logout"} className=' tooltip tooltip-bottom sm:w-7 sm:h-7'>
               <button onClick={logout} data-tip="Logout" className='border solid  rounded-md hover:bg-slate-200 p-2 ml-3 flex justify-center tooltip-bottom '>
                 <img className='h-7 w-7 tooltip-bottom' data-tip="Logout" src="https://cdn-icons-png.flaticon.com/128/16967/16967536.png" alt="" />
               </button>
