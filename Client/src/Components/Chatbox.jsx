@@ -197,7 +197,7 @@ function Chatbox() {
               <div className="skeleton h-6 w-full"></div>
             </div>
             :
-            < div className=' md:h-screen h-[250px] '>
+            <   >
               {Users.map((element, index) => (
                 <button key={index} onClick={() => passdata(element)} className="w-full  btn text-white mb-5  h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{backgroundImage:"linear-gradient(transparent,transparent)"}}>
                   <div className="avatar online ml-6 ">
