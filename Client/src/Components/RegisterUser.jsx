@@ -135,11 +135,7 @@ const RegisterUser = () => {
               {loading
                 ? "Register"
                 :
-                <l-tail-chase
-                  size="25"
-                  speed="1.75"
-                  color="white"
-                >Loading...</l-tail-chase>
+                <span className="loading loading-spinner loading-md"></span>
 
               }</button>
             <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer"><Link to="/login">Already a User ? Login </Link>    </span><br /> <span className=' text-md relative left-2  top-2 text-blue-600'> <Link to="/">Home</Link></span>

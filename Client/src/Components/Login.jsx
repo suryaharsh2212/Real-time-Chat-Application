@@ -85,9 +85,6 @@ export default function Login() {
         transition={Bounce}
       />
       <div className="grid grid-cols-1  gap-4">
-        {/* <div>
-          <img src="https://img.freepik.com/free-vector/global-data-security-personal-data-security-cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37336.jpg?size=626&ext=jpg" alt="" />
-        </div> */}
         <div className="box flex justify-center items-center " style={{backgroundColor:"FAFAFA"}}>
      
         <div className="flex h-screen w-fit p-10 md:p-20 flex-1 flex-col justify-center   lg:px-8 outline-5 outline-double" >
@@ -149,13 +146,7 @@ export default function Login() {
                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
              >
                {loading?
-                  <l-tail-chase
-                  size="20"
-                  speed="1.75"
-                  color="white"
-                > Loading...</l-tail-chase>
-               
-
+                  <span className="loading loading-spinner loading-md"></span>
                :"Sign in"}
              </button>
            </div>
