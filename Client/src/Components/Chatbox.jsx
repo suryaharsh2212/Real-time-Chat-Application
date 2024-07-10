@@ -199,7 +199,7 @@ function Chatbox() {
             :
             <>
               {Users.map((element, index) => (
-                <button key={index} onClick={() => passdata(element)} className="w-full  btn text-white  mb-5   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{backgroundImage:"linear-gradient(#4D4DFF,#4D4DFF)"}}>
+                <button key={index} onClick={() => passdata(element)} className="w-full  btn text-white  mb-5   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{backgroundImage:"linear-gradient(#CCCCFF,#CCCCFF)"}}>
                   <div className="avatar online ml-6 ">
                     <div className="w-10 h-10 rounded-full" >
                       <img src={`${UserandomImages()}`} alt="avatar" />
@@ -261,7 +261,7 @@ function Chatbox() {
                 <div className=' '>
                   {datamessage.map((value, index) => {
                     const task = (value.user == id) ? 'end' : 'start';
-                    const colour = !(value.user == id) ? 'bg-zinc-200' : 'bg-cyan-100';
+                    const colour = !(value.user == id) ? 'bg-cyan-200' : 'bg-cyan-100';
                     return (
                       <div key={index}  >
                         <div className={`chat chat-${task}`}>
