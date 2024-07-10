@@ -239,8 +239,8 @@ function Chatbox() {
               }
             </h1>
             <div data-tip={"Logout"} className=' tooltip tooltip-bottom'>
-              <button onClick={logout} data-tip="Logout" className='border solid border-orange-500 rounded-md hover:bg-slate-200 p-2 ml-3 flex justify-center tooltip-bottom '>
-                <img className='h-7 w-7 tooltip-bottom' data-tip="Logout" src="https://cdn-icons-png.flaticon.com/128/5508/5508688.png" alt="" />
+              <button onClick={logout} data-tip="Logout" className='border solid  rounded-md hover:bg-slate-200 p-2 ml-3 flex justify-center tooltip-bottom '>
+                <img className='h-7 w-7 tooltip-bottom' data-tip="Logout" src="https://cdn-icons-png.flaticon.com/128/16967/16967536.png" alt="" />
               </button>
             </div>
           </div>
@@ -286,7 +286,7 @@ function Chatbox() {
                 placeholder="Type your message..."
                 className="flex-1 border border-gray-300 w-3/4 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"
               />
-              <button onClick={handleMessageChange} className="ml-2 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-md">
+              <button onClick={handleMessageChange} className="ml-2 bg-blue-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-md">
                 {sentLoading
                   ?
                   <div>
