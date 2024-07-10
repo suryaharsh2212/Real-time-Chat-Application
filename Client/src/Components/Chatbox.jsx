@@ -210,11 +210,11 @@ function Chatbox() {
                   </div>
 
                   <div className='col-span-1'>
-                    {Isnewmsg || (element.fullname== new_msgFrom)?
-                      <img src="https://cdn-icons-png.flaticon.com/128/8265/8265301.png" alt="" />
-                      :
-                      <></>
-                    }
+                  
+                      <img className='h-5 w-5' src="https://cdn-icons-png.flaticon.com/128/5649/5649794.png" alt="" />
+                      
+                      
+                    
                   </div>
                 </button>
               ))}
