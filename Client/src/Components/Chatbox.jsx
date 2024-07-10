@@ -36,6 +36,7 @@ function Chatbox() {
   const [searchLoading, setsearchLoading] = useState(false)
   const [userLoading, setuserLoading] = useState(false)
   const navigate = useNavigate()
+  const [new_msgFrom,setNewmsg]=useState('')
 
   const handleMessageChange = async () => {
     setsentLoading(true)
@@ -45,6 +46,7 @@ function Chatbox() {
     setdatamessage(prevMessages => [...prevMessages, { message, user: id }]);
     const conversation = await UsegetConversation(id, receiverId._id);
     setdatamessage(conversation.data.messages || []);
+    
     setsentLoading(false)
     setMessage('');
 
@@ -57,11 +59,17 @@ function Chatbox() {
        const rec=msg.data.text 
        setdatamessage(prevMessages => [...prevMessages, { message:rec, user: msg.data.senderId}]);
     })
+    const newMSg=async()=>{
+      const result =  UseCurrentUser(receiverId);
+      setNewmsg(result)
+    }
+    newMSg()
+    
     return () => {
       channel.unsubscribe() 
      
     };
-  },);
+  },[]);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -214,7 +222,7 @@ function Chatbox() {
                   </div>
 
                   <div className='col-span-1'>
-                    {Isnewmsg ?
+                    {Isnewmsg && (element.fullname== new_msgFrom)?
                       <img src="https://cdn-icons-png.flaticon.com/128/8265/8265301.png" alt="" />
                       :
                       <></>
@@ -229,7 +237,7 @@ function Chatbox() {
           {/* Name display */}
           {/* Chat messages */}
           <div className='flex flex-row  justify-start items-start'>
-            <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(to bottom, skyblue)" }}>
+            <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(to bottom, skyblue,cyan)" }}>
               {loading ?
                 <div className='flex'>
                   <h1 className=' font-thin text-white'>Loading chats......</h1>
