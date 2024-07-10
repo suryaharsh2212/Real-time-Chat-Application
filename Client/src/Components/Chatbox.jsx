@@ -203,7 +203,7 @@ function Chatbox() {
             :
             <>
               {Users.map((element, index) => (
-                <button key={index} onClick={() => passdata(element)} className="w-full  btn bg-gradient-to-r  text-white  mb-5   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(to bottom, 135deg,skyblue,cyan)" }}>
+                <button key={index} onClick={() => passdata(element)} className="w-full  btn   text-white  mb-5   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(to bottom, 135deg,skyblue,cyan)" }}>
                   <div className="avatar online ml-6 ">
                     <div className="w-10 h-10 rounded-full" >
                       <img src={`${UserandomImages()}`} alt="avatar" />
@@ -229,7 +229,7 @@ function Chatbox() {
           {/* Name display */}
           {/* Chat messages */}
           <div className='flex flex-row  justify-start items-start'>
-            <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(to bottom, skyblue,blue)" }}>
+            <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(to bottom, skyblue)" }}>
               {loading ?
                 <div className='flex'>
                   <h1 className=' font-thin text-white'>Loading chats......</h1>
