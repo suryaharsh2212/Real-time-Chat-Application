@@ -197,7 +197,7 @@ function Chatbox() {
               <div className="skeleton h-6 w-full"></div>
             </div>
             :
-            <>
+            < div className=' md:h-screen h-[250px] '>
               {Users.map((element, index) => (
                 <button key={index} onClick={() => passdata(element)} className="w-full  btn text-white mb-5  h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{backgroundImage:"linear-gradient(transparent,transparent)"}}>
                   <div className="avatar online ml-6 ">
@@ -210,7 +210,7 @@ function Chatbox() {
                   </div>
 
                   <div className='col-span-1'>
-                    {Isnewmsg && (element.fullname== new_msgFrom)?
+                    {Isnewmsg || (element.fullname== new_msgFrom)?
                       <img src="https://cdn-icons-png.flaticon.com/128/8265/8265301.png" alt="" />
                       :
                       <></>
@@ -261,7 +261,7 @@ function Chatbox() {
                 <div className=' '>
                   {datamessage.map((value, index) => {
                     const task = (value.user == id) ? 'end' : 'start';
-                    const colour = !(value.user == id) ? 'bg-cyan-200' : 'bg-cyan-100';
+                    const colour = !(value.user == id) ? 'bg-gray-100' : 'bg-gray-100';
                     return (
                       <div key={index}  >
                         <div className={`chat chat-${task}`}>
