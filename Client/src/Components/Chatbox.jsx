@@ -175,18 +175,14 @@ function Chatbox() {
       <div className='md:grid md:grid-cols-4 p-5 h-screen bg-slate-900'>
 
         <div className='md:col-span-1 p-4 overflow-y-scroll h-[100%]  relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
-          <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(#ff8c00,#ff4500)" }}>Welcome, {name}</h1>
+          <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(skyblue,blue)" }}>Welcome, {name}</h1>
           <div className="pt-2 relative mx-auto  text-gray-600  mb-5 p-2" >
             <input value={search} autoComplete='off' onChange={(e) => { setSearch(e.target.value) }} className="border-2 border-gray-300 bg-white w-full h-10 px-5 pr-16 rounded-lg text-sm outline-orange-600 focus:outline-none"
               type="search" name="search" placeholder="Search" />
             <button type="submit" onClick={() => searchUser(search)} className="absolute right-0 top-0 mr-5 mt-5">
               {searchLoading
                 ?
-                <l-tail-chase
-                  size="20"
-                  speed="1.75"
-                  color="black"
-                ></l-tail-chase>
+                <span className="loading loading-spinner loading-md"></span>
                 :
                 <img className='h-5 w-5' src="https://cdn-icons-png.flaticon.com/128/11741/11741045.png" alt="" />}
             </button>
@@ -207,7 +203,7 @@ function Chatbox() {
             :
             <>
               {Users.map((element, index) => (
-                <button key={index} onClick={() => passdata(element)} className="w-full  btn bg-gradient-to-r  text-white  mb-5   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(to bottom, 135deg, #B2FEFA 10%, #0ED2F7 100%)" }}>
+                <button key={index} onClick={() => passdata(element)} className="w-full  btn bg-gradient-to-r  text-white  mb-5   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(to bottom, 135deg,skyblue,cyan)" }}>
                   <div className="avatar online ml-6 ">
                     <div className="w-10 h-10 rounded-full" >
                       <img src={`${UserandomImages()}`} alt="avatar" />
