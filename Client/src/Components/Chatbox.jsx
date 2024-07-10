@@ -174,7 +174,7 @@ function Chatbox() {
       <div className='md:grid md:grid-cols-4 p-5 h-screen '>
 
         <div className='md:col-span-1 p-4 overflow-y-scroll h-[100%]  relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
-          <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(skyblue,cyan)" }}>Welcome, {name}</h1>
+          <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(#007FFF,#007FFF)" }}>Welcome, {name}</h1>
           <div className="pt-2 relative mx-auto  text-gray-600  mb-5 p-2" >
             <input value={search} autoComplete='off' onChange={(e) => { setSearch(e.target.value) }} className="border-2 border-gray-300 bg-white w-full h-10 px-5 pr-16 rounded-lg text-sm outline-orange-600 focus:outline-none"
               type="search" name="search" placeholder="Search" />
@@ -195,9 +195,6 @@ function Chatbox() {
               <div className="skeleton h-6 w-full"></div>
               <div className="skeleton h-6 w-full"></div>
               <div className="skeleton h-6 w-full"></div>
-
-
-
             </div>
             :
             <>
@@ -227,16 +224,12 @@ function Chatbox() {
         <div className='col-span-3  md:h-[95%] flex flex-col' >
           
           <div className='flex flex-row  justify-start items-start'>
-            <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(to bottom, skyblue,cyan)" }}>
+            <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(#007FFF,#007FFF)" }}>
               {loading ?
                 <div className='flex'>
                   <h1 className=' font-thin text-white'>Loading chats......</h1>
                   <div className='flex justify-center items-center mb-10'>
-                    <l-tail-chase
-                      size="25"
-                      speed="1.75"
-                      color="white"
-                    ></l-tail-chase>
+                  <span className="loading loading-spinner loading-md"></span>
                   </div>
                 </div>
                 :
