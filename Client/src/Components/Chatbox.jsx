@@ -39,10 +39,10 @@ function Chatbox() {
 
   const handleMessageChange = async () => {
     setsentLoading(true)
-    setdatamessage(prevMessages => [...prevMessages, { message, user: id }]);
+   
     setMessage(message);
-    await UseSendMessage(message); 
     await UseSendMessage(message, id, receiverId);
+    setdatamessage(prevMessages => [...prevMessages, { message, user: id }]);
     const conversation = await UsegetConversation(id, receiverId._id);
     setdatamessage(conversation.data.messages || []);
     setsentLoading(false)
