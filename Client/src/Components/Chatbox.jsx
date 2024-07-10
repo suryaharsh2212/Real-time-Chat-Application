@@ -211,7 +211,7 @@ function Chatbox() {
 
                   <div className='col-span-1'>
                   
-                      <button className='btn hover:btn-circle'><img className='h-10 w-10' src="https://cdn-icons-png.flaticon.com/128/5649/5649794.png" alt="" /></button>
+                      <button className=' hover:btn-circle'><img className='h-10 w-10' src="https://cdn-icons-png.flaticon.com/128/5649/5649794.png" alt="" /></button>
                       
                       
                     
