@@ -157,7 +157,7 @@ function Chatbox() {
   }
 
   return (
-    <div className=' bg-slate-100'>
+    <div className=' bg-slate-800'>
       <ToastContainer
         position="bottom-center"
         autoClose={5000}
@@ -199,13 +199,13 @@ function Chatbox() {
             :
             <>
               {Users.map((element, index) => (
-                <button key={index} onClick={() => passdata(element)} className="w-full  btn text-white mb-5  h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{backgroundImage:"linear-gradient(#1C39BB,#1C39BB)"}}>
+                <button key={index} onClick={() => passdata(element)} className="w-full  btn text-white mb-5  h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{backgroundImage:"linear-gradient(#ADD8E6,#ADD8E6)"}}>
                   <div className="avatar online ml-6 ">
                     <div className="w-10 h-10 rounded-full" >
                       <img src={`${UserandomImages()}`} alt="avatar" />
                     </div>
                   </div>
-                  <div className='ml-10 text-white col-span-3 chat chat-start'>
+                  <div className='ml-10 text-gray-700 col-span-3 chat chat-start'>
                     {element.fullname}
                   </div>
 
