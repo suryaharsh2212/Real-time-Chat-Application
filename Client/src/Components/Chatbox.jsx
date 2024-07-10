@@ -61,6 +61,7 @@ function Chatbox() {
     })
     const newMSg=async()=>{
       const result =  UseCurrentUser(receiverId);
+      console.log("Message received from -",result);
       setNewmsg(result)
     }
     newMSg()
