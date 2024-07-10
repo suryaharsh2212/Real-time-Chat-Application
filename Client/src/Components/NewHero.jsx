@@ -2,9 +2,10 @@ import { Link } from "react-router-dom"
 
 
 function NewHero() {
+    
     return (
         <div>
-            <div className='md:h-full' style={{ backgroundImage: "linear-gradient(#62cff4,#2c67f2)" }}>
+            <div className='md:h-full' style={{ backgroundImage: "linear-gradient(#62cff4,#2c67f2 )" }}>
                 {/* header  */}
                 <div className='w-full h-20 '  >
 
@@ -32,6 +33,7 @@ function NewHero() {
 
 
                     <div className=" md:w-1/2  flex justify-center">
+                  
 
                         <div className="mockup-phone scale-x-90 animate-gradient">
 

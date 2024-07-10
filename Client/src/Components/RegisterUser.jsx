@@ -7,8 +7,9 @@ import UseRegisterUser from '../Utility/useRegistration.js';
 import Auth from './Auth.jsx';
 import 'ldrs/tailChase'
 import 'ldrs/helix'
-import 'ldrs/grid'
-const RegisterUser = () => {
+import 'ldrs/grid' 
+const RegisterUser = () =>
+   {
   const notify = (prompt) => {
     toast.error(` ${prompt}`, {
       position: "bottom-center",

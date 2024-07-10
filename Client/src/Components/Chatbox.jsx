@@ -268,7 +268,7 @@ function Chatbox() {
                 <div className=' '>
                   {datamessage.map((value, index) => {
                     const task = (value.user == id) ? 'end' : 'start';
-                    const colour = !(value.user == id) ? 'bg-zinc-100' : 'bg-zinc-200';
+                    const colour = !(value.user == id) ? 'bg-zinc-200' : 'bg-blue-300';
                     return (
                       <div key={index}  >
                         <div className={`chat chat-${task}`}>
