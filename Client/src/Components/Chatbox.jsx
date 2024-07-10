@@ -293,7 +293,7 @@ function Chatbox() {
                 placeholder="Type your message..."
                 className="flex-1 border border-gray-300 w-3/4 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"
               />
-              <button onClick={handleMessageChange} className="ml-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-md">
+              <button onClick={handleMessageChange} className="ml-2 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-md">
                 {sentLoading
                   ?
                   <div>
