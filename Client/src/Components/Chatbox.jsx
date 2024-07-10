@@ -157,7 +157,7 @@ function Chatbox() {
   }
 
   return (
-    <div className=' bg-slate-800'>
+    <div className=' bg-whitesmoke'>
       <ToastContainer
         position="bottom-center"
         autoClose={5000}
