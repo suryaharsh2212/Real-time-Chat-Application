@@ -174,7 +174,7 @@ function Chatbox() {
       <div className='md:grid md:grid-cols-4 p-5 h-screen '>
 
         <div className='md:col-span-1 p-4 overflow-y-scroll h-[100%]  relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
-          <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(#007FFF,#007FFF)" }}>Welcome, {name}</h1>
+          <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(#0018A8,#1C39BB)" }}>Welcome, {name}</h1>
           <div className="pt-2 relative mx-auto  text-gray-600  mb-5 p-2" >
             <input value={search} autoComplete='off' onChange={(e) => { setSearch(e.target.value) }} className="border-2 border-gray-300 bg-white w-full h-10 px-5 pr-16 rounded-lg text-sm outline-orange-600 focus:outline-none"
               type="search" name="search" placeholder="Search" />
@@ -199,7 +199,7 @@ function Chatbox() {
             :
             <>
               {Users.map((element, index) => (
-                <button key={index} onClick={() => passdata(element)} className="w-full  btn text-white  mb-5   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{backgroundImage:"linear-gradient(#89CFF0,#6CB4EE)"}}>
+                <button key={index} onClick={() => passdata(element)} className="w-full  btn text-white  mb-5   h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{backgroundImage:"linear-gradient(#4D4DFF,#4D4DFF)"}}>
                   <div className="avatar online ml-6 ">
                     <div className="w-10 h-10 rounded-full" >
                       <img src={`${UserandomImages()}`} alt="avatar" />
@@ -224,7 +224,7 @@ function Chatbox() {
         <div className='col-span-3  md:h-[95%] flex flex-col' >
           
           <div className='flex flex-row  justify-start items-start'>
-            <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(#007FFF,#007FFF)" }}>
+            <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(#0018A8,#1C39BB)" }}>
               {loading ?
                 <div className='flex'>
                   <h1 className=' font-thin text-white'>Loading chats......</h1>
@@ -253,7 +253,7 @@ function Chatbox() {
                   <div className='flex flex-col'>
                     <h1 className='btn font-light mb-5'> Select a conversation to start........</h1>
 
-                    <div className='flex justify-center' >
+                    <div className='flex justify-center ' >
                     </div>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ function Chatbox() {
                 <div className=' '>
                   {datamessage.map((value, index) => {
                     const task = (value.user == id) ? 'end' : 'start';
-                    const colour = !(value.user == id) ? 'bg-zinc-200' : 'bg-blue-300';
+                    const colour = !(value.user == id) ? 'bg-zinc-200' : 'bg-cyan-100';
                     return (
                       <div key={index}  >
                         <div className={`chat chat-${task}`}>
