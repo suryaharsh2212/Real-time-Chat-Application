@@ -63,8 +63,6 @@ const RegisterUser = () =>
         setloading(true)
       }
       else {
-        
- 
         setotpstate(false)
          
       }

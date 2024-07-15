@@ -14,7 +14,7 @@ const registerUser = async (req, res) => {
 
     try {
         const { fullname, phoneno,email,password, profile } = req.body;
-        console.log(email);
+     
 
         if (!fullname || !phoneno|| !password || !email) {
             response.message="Please ensure that all required fields, including Fullname, PhoneNumber, and About information, are provided.";
@@ -49,7 +49,7 @@ const registerUser = async (req, res) => {
             otp:otp
         })
         console.log(email,otp);
-        sendOTPEmail(email,otp);
+        await sendOTPEmail(email,otp);
 
         response.message="User registered successfully.";
         response.error=false;
