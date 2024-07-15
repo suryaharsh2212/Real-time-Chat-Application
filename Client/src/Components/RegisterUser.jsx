@@ -41,7 +41,7 @@ const RegisterUser = () =>
   const [phoneNumber, setphonenumber] = useState("")
   const [password, setPassword] = useState("")
   const [otp,setOTP]=useState("")
-  const [otpstate,setotpstate]=useState(false)
+  const [otpstate,setotpstate]=useState(true)
   const [email,setemail]=useState("")
   const [loading, setloading] = useState(true)
   const navigate = useNavigate()
