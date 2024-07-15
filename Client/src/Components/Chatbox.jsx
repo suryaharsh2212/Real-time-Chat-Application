@@ -9,6 +9,7 @@ import { UserandomImages } from '../Utility/Usegetimages';
 import UseSearchUser from '../Utility/UserSearchuser';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import Ably from 'ably'
+import Friendcard from './Friendcard';
 
 
 
@@ -24,14 +25,14 @@ function Chatbox() {
   const [loading, setloading] = useState(false)
   const [sentLoading, setsentLoading] = useState(false)
   const [chattingwith, setchattingwith] = useState("Choose a user to begin chatting")
-  const ably = new Ably.Realtime('OIeztA.vtaYyw:uGJV4_D5wkf4pihnv8M6TcWiyrjaeQSmL1OrCODpIsc') 
+  const ably = new Ably.Realtime('OIeztA.vtaYyw:uGJV4_D5wkf4pihnv8M6TcWiyrjaeQSmL1OrCODpIsc')
 
   const [Isnewmsg, Setnewmsg] = useState(false)
   const [search, setSearch] = useState('')
   const [searchLoading, setsearchLoading] = useState(false)
   const [userLoading, setuserLoading] = useState(false)
   const navigate = useNavigate()
-  const [new_msgFrom,setNewmsg]=useState('')
+  const [new_msgFrom, setNewmsg] = useState('')
 
   const handleMessageChange = async () => {
     setsentLoading(true)
@@ -48,22 +49,22 @@ function Chatbox() {
   useEffect(() => {
     const channel = ably.channels.get(`${id}`)
     channel.subscribe("new-message", (msg) => {
-       Setnewmsg(true);
-       const rec=msg.data.text 
-       setdatamessage(prevMessages => [...prevMessages, { message:rec, user: msg.data.senderId}]);
+      Setnewmsg(true);
+      const rec = msg.data.text
+      setdatamessage(prevMessages => [...prevMessages, { message: rec, user: msg.data.senderId }]);
     })
-    const newMSg=async()=>{
-      const result =  UseCurrentUser(receiverId);
-      console.log("Message received from -",result);
+    const newMSg = async () => {
+      const result = UseCurrentUser(receiverId);
+      console.log("Message received from -", result);
       setNewmsg(result)
     }
     newMSg()
-    
+
     return () => {
-      channel.unsubscribe() 
-     
+      channel.unsubscribe()
+
     };
-  },[]);
+  }, []);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -77,7 +78,7 @@ function Chatbox() {
       }
     };
     fetchUsers();
-  }, [id,receiverId]);
+  }, [id, receiverId]);
 
   useEffect(() => {
     const fetchdata = async () => {
@@ -171,9 +172,9 @@ function Chatbox() {
         theme="light"
         transition={Bounce}
       />
-      <div className='md:grid md:grid-cols-4 p-5 h-screen '>
+      <div className='md:grid md:grid-cols-7 p-5 h-screen '>
 
-        <div className='md:col-span-1 p-4 overflow-y-scroll h-[100%]  relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
+        <div className='md:col-span-2 p-4 overflow-y-scroll h-[100%]  relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
           <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(#0018A8,#1C39BB)" }}>Welcome, {name}</h1>
           <div className="pt-2 relative mx-auto  text-gray-600  mb-5 p-2" >
             <input value={search} autoComplete='off' onChange={(e) => { setSearch(e.target.value) }} className="border-2 border-gray-300 bg-white w-full h-10 px-5 pr-16 rounded-lg text-sm outline-orange-600 focus:outline-none"
@@ -199,7 +200,7 @@ function Chatbox() {
             :
             <   >
               {Users.map((element, index) => (
-                <button key={index} onClick={() => passdata(element)} className="w-full  btn text-white mb-5  h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{backgroundImage:"linear-gradient(transparent,transparent)"}}>
+                <button key={index} onClick={() => passdata(element)} className="w-full  btn text-white mb-5  h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(transparent,transparent)" }}>
                   <div className="avatar online ml-6 ">
                     <div className="w-10 h-10 rounded-full" >
                       <img src={`${UserandomImages()}`} alt="avatar" />
@@ -210,26 +211,27 @@ function Chatbox() {
                   </div>
 
                   <div className='col-span-1'>
-                  
-                      {/* <button className=' hover:btn-circle'><img className='h-10 w-10' src="https://cdn-icons-png.flaticon.com/128/5649/5649794.png" alt="" /></button>  */}
-                      
-                      
-                    
+
+                    {/* <button className=' hover:btn-circle'><img className='h-10 w-10' src="https://cdn-icons-png.flaticon.com/128/5649/5649794.png" alt="" /></button>  */}
+
+
+
                   </div>
                 </button>
               ))}
             </>
           }
         </div>
-        <div className='col-span-3  md:h-[95%] flex flex-col' >
-          
+
+        <div className='col-span-5  md:h-[95%] flex flex-col' >
+
           <div className='flex flex-row  justify-start items-start'>
             <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(#0018A8,#1C39BB)" }}>
               {loading ?
                 <div className='flex'>
                   <h1 className=' font-thin text-white'>Loading chats......</h1>
                   <div className='flex justify-center items-center mb-10'>
-                  <span className="loading loading-spinner loading-md"></span>
+                    <span className="loading loading-spinner loading-md"></span>
                   </div>
                 </div>
                 :
@@ -298,6 +300,25 @@ function Chatbox() {
               </button>
             </div>
           </div>
+        </div>
+        <div className='col-span-2 ml-2 flex justify-start overflow-y-scroll flex-col'>
+          <div className=' flex w-full justify-center'>
+            <h1 className=' text-lg mt-5 border rounded-lg border-blue-600 font-thin py-2 px-5'>
+              Availabe users
+            </h1>
+          </div>
+
+          <div className="grid grid-rows-2 gap-3 p-4 sm:grid-cols-0 sm:grid-rows-none">
+
+           
+
+
+            {/* <div className="bg-gray-200  p-4 border text-center">Item 2</div>
+            <div className="bg-gray-200  p-4 border text-center">Item 3</div>
+            <div className="bg-gray-200  p-4 border text-center">Item 4</div> */}
+          </div>
+
+
         </div>
       </div>
 

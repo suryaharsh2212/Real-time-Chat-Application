@@ -14,7 +14,7 @@ app.use(cors({
     origin: 'https://real-time-chat-application-uyhn.vercel.app',
     credentials: true,
     withCredentials: true,
-    // allowedHeaders: ["my-custom-header"], 
+    
 }));
 app.use(cookieParser())
 app.use(express.urlencoded({extended:false}))

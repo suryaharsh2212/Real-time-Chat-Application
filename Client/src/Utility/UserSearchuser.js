@@ -12,8 +12,6 @@ async function UseSearchUser(name)
         });
     
        const user=await response.json()
-        // console.log(user); 
-       
        return user
       
         
