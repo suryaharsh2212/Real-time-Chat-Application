@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import isValidIndianPhoneNumber from '../Utility/usephonenumberchecker.js';
 import { Link, useNavigate } from 'react-router-dom';
 import UseRegisterUser from '../Utility/useRegistration.js';
-import Auth from './Auth.jsx';
 import 'ldrs/tailChase'
 import 'ldrs/helix'
 import 'ldrs/grid' 
