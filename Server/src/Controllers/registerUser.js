@@ -33,6 +33,13 @@ const registerUser = async (req, res) => {
             response.error= true
             return res.status(409).json(response);
         }
+        const checkemail=await User.findOne({email})
+        if(checkemail)
+        {
+            response.message = "An account already created with this email";
+            response.error= true
+            return res.status(409).json(response);
+        }
         
         const hashedPassword=await bcrypt.hash(password,10)
         
