@@ -1,5 +1,4 @@
 
-
 import { User } from "../Database/Models/UserModel.js";
 import isValidIndianPhoneNumber from "../Utilities/PhoneNovalidator.js";
 import bcrypt from "bcrypt"
@@ -20,7 +19,7 @@ const LoginUser = async (req, res) => {
         if (!valid) {
             response.message = "Invalid phone no Provided";
             response.error = "true"
-            res.status(422).json({ response })
+            res.status(422).json({ response });
         }
         else {
            const findUser=await User.findOne({phoneno})
@@ -53,4 +52,4 @@ const LoginUser = async (req, res) => {
         console.log(error);
     }
 }
-export default LoginUser
+export default LoginUser;
