@@ -24,7 +24,7 @@ function NewHero() {
                 <div className=" md:flex md:flex-row h-1/2 w-full ">
                     <div className="  ml-3  md:w-1/2 flex flex-col justify-center items-center">
                         <h1 className=' font-extrabold md:text-5xl text-3xl  w-96 bg-gradient-to-r font mt-5 from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient bg-300% text-white' >
-                            Start chatting with customers anytime with Application
+                            Start chatting with People anytime with Giggle
 
                         </h1>
                         <h1 className=' mt-5 font-medium w-96 text-gray-200'>Your conversations are protected with end-to-end encryption, ensuring privacy and confidentiality.</h1>
@@ -34,45 +34,7 @@ function NewHero() {
 
                     <div className=" md:w-1/2  flex justify-center">
                   
-
-                        <div className="mockup-phone scale-x-90 animate-gradient">
-
-                            <div className="camera"></div>
-                            <div className="display">
-                                <div className="artboard artboard-demo phone-1 p-0" style={{ border: "2px solid red" }}>
-                                    <div className="p-2 ">
-
-                                        <div className="chat chat-start">
-                                            <div className="chat-bubble chat-bubble-primary">
-                                                Hey! How's it going?
-                                            </div>
-                                        </div>
-
-
-                                        <div className="chat chat-end mt-10 ">
-                                            <div className="chat-bubble bg-white text-black">
-                                                Hi there! I'm good, thanks. How about you?
-                                            </div>
-                                        </div>
-
-
-                                        <div className="chat chat-start mt-10">
-                                            <div className="chat-bubble chat-bubble-primary">
-                                                Not bad, just catching up on some work.
-                                            </div>
-                                        </div>
-
-
-                                        <div className="chat chat-end mt-10 ">
-                                            <div className="chat-bubble bg-white text-black">
-                                                That's good. Let me know if you need any help!
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                        <img className=" h-full" src="https://res.cloudinary.com/dllgqcla4/image/upload/v1722516205/man-with-texting-receiving-messages_o047lr.png" alt="" />
                     </div>
 
 

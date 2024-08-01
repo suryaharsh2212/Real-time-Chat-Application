@@ -7,6 +7,7 @@ const getUser = async (req, res) => {
         data: [],
     };
 
+    
     try {
         const users = await User.find();
         response.data = users;
