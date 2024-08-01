@@ -5,13 +5,13 @@ function NewHero() {
     
     return (
         <div>
-            <div className='md:h-full' style={{ backgroundImage: "linear-gradient(#62cff4,#2c67f2 )" }}>
+            <div className='md:h-full' >
                 {/* header  */}
                 <div className='w-full h-20 '  >
 
                     <div className='grid grid-cols-5 '>
                         <div className='col-span-3 bg-gray-200 p-4 flex justify-start'>
-                            <img className='h-7 w-7 ' src="https://cdn-icons-png.flaticon.com/128/9459/9459144.png" alt="" />
+                            <img className='h-7 w-7 md:ml-20 ' src="https://cdn-icons-png.flaticon.com/128/9459/9459144.png" alt="" />
                             <h1 className=' ml-2 font-extrabold text-2xl'>Giggle</h1>
                         </div>
                         <div className='col-span-2 bg-gray-200 p-4 md:flex md:justify-end'> <button className=' border border-black p-1 w-32 rounded hover:bg-gray-300  '> <Link to="/login">Login</Link></button></div>
@@ -23,11 +23,11 @@ function NewHero() {
                 {/* middle */}
                 <div className=" md:flex md:flex-row h-1/2 w-full ">
                     <div className="  ml-3  md:w-1/2 flex flex-col justify-center items-center">
-                        <h1 className=' font-extrabold md:text-5xl text-3xl  w-96 bg-gradient-to-r font mt-5 from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient bg-300% text-white' >
-                            Start chatting with People anytime with Giggle
+                        <h1 className=' mb-1 font-extrabold md:text-5xl text-3xl  w-96 bg-gradient-to-r font mt-5 from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient bg-300% text-black' >
+                            Start chatting with People anytime with GiggleChat
 
                         </h1>
-                        <h1 className=' mt-5 font-medium w-96 text-gray-200'>Your conversations are protected with end-to-end encryption, ensuring privacy and confidentiality.</h1>
+                        <h1 className=' mt-7 font-medium w-96 text-blue-800'>Your conversations are protected with end-to-end encryption, ensuring privacy and confidentiality.</h1>
                         <div className='w-96 mt-3 flex justify-center md:justify-start mb-20'> <button className=' text white rounded btn'><Link to="/register">Get Started</Link></button></div>
                     </div>
 
