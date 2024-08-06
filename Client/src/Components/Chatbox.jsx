@@ -33,6 +33,7 @@ function Chatbox() {
   const [userLoading, setuserLoading] = useState(false)
   const navigate = useNavigate()
   const [new_msgFrom, setNewmsg] = useState('')
+  
 
   const handleMessageChange = async () => {
     setsentLoading(true)
@@ -156,6 +157,8 @@ function Chatbox() {
       setsearchLoading(false)
     }
   }
+  
+  
 
   return (
     <div className=' bg-whitesmoke'>
@@ -262,7 +265,7 @@ function Chatbox() {
                 :
                 <div className=' '>
                   {datamessage.map((value, index) => {
-                    const task = (value.user == id) ?'end' : 'start';
+                    const task = (value.user == id) ?'end':'start';
                     const colour = !(value.user == id) ? 'bg-gray-100' : 'bg-gray-100';
                     return (
                       <div key={index}  >
@@ -301,11 +304,11 @@ function Chatbox() {
             </div>
           </div>
         </div>
-        <div className='col-span-2 ml-2 flex justify-start overflow-y-scroll flex-col'>
+        {/* <div className=' ml-2 flex justify-start overflow-y-scroll flex-col'>
           <div className=' flex w-full justify-center'>
-            {/* <h1 className=' text-lg mt-5 border rounded-lg border-blue-600 font-thin py-2 px-5'>
+            <h1 className=' text-lg mt-5 border rounded-lg border-blue-600 font-thin py-2 px-5'>
             
-            </h1> */}
+            </h1>
           </div>
 
           <div className="grid grid-rows-2 gap-3 p-4 sm:grid-cols-0 sm:grid-rows-none">
@@ -313,13 +316,13 @@ function Chatbox() {
            
 
 
-            {/* <div className="bg-gray-200  p-4 border text-center">Item 2</div>
+            <div className="bg-gray-200  p-4 border text-center">Item 2</div>
             <div className="bg-gray-200  p-4 border text-center">Item 3</div>
-            <div className="bg-gray-200  p-4 border text-center">Item 4</div> */}
+            <div className="bg-gray-200  p-4 border text-center">Item 4</div>
           </div>
 
 
-        </div>
+        </div> */}
       </div>
 
     </div>
