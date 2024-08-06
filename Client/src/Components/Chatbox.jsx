@@ -161,109 +161,151 @@ function Chatbox() {
   
 
   return (
-    <div className=' bg-whitesmoke'>
-      <ToastContainer
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        transition={Bounce}
-      />
-      <div className='md:grid md:grid-cols-7 p-5 h-screen '>
-
-        <div className='md:col-span-2 p-4 overflow-y-scroll h-[100%]  relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }} >
-          <h1 className='w-full btn top-0 mb-5 flex justify-center  text-white' style={{ backgroundImage: "linear-gradient(#0018A8,#1C39BB)" }}>Welcome, {name}</h1>
-          <div className="pt-2 relative mx-auto  text-gray-600  mb-5 p-2" >
-            <input value={search} autoComplete='off' onChange={(e) => { setSearch(e.target.value) }} className="border-2 border-gray-300 bg-white w-full h-10 px-5 pr-16 rounded-lg text-sm outline-orange-600 focus:outline-none"
-              type="search" name="search" placeholder="Search" />
-            <button type="submit" onClick={() => searchUser(search)} className="absolute right-0 top-0 mr-5 mt-5">
-              {searchLoading
-                ?
-                <span className="loading loading-spinner loading-md"></span>
-                :
-                <img className='h-5 w-5' src="https://cdn-icons-png.flaticon.com/128/11741/11741045.png" alt="" />}
-            </button>
-          </div>
-
-          {userLoading
-            ?
-            <div className="flex flex-col mt-10 gap-4 w-80">
-              <h1 className='ml-5 font-light '> Loading your Chats......</h1>
-              <div className="skeleton h-32  w-full"></div>
-              <div className="skeleton h-6 w-full"></div>
-              <div className="skeleton h-6 w-full"></div>
-              <div className="skeleton h-6 w-full"></div>
-            </div>
-            :
-            <   >
-              {Users.map((element, index) => (
-                <button key={index} onClick={() => passdata(element)} className="w-full  btn text-white mb-5  h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(transparent,transparent)" }}>
-                  <div className="avatar online ml-6 ">
-                    <div className="w-10 h-10 rounded-full" >
-                      <img src={`${UserandomImages()}`} alt="avatar" />
-                    </div>
-                  </div>
-                  <div className='ml-10 text-gray-700 col-span-3 chat chat-start'>
-                    {element.fullname}
-                  </div>
-
-                  <div className='col-span-1'>
-
-                    {/* <button className=' hover:btn-circle'><img className='h-10 w-10' src="https://cdn-icons-png.flaticon.com/128/5649/5649794.png" alt="" /></button>  */}
-
-
-
-                  </div>
-                </button>
-              ))}
-            </>
-          }
-        </div>
-
-        <div className='col-span-5  md:h-[95%] flex flex-col' >
-
-          <div className='flex flex-row  justify-start items-start'>
-            <h1 className=' ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(#0018A8,#1C39BB)" }}>
-              {loading ?
-                <div className='flex'>
-                  <h1 className=' font-thin text-white'>Loading chats......</h1>
-                  <div className='flex justify-center items-center mb-10'>
-                    <span className="loading loading-spinner loading-md"></span>
-                  </div>
-                </div>
-                :
-                <div className='text-white'>
-                  To : {chattingwith}
-                </div>
-              }
-            </h1>
-            <div data-tip={"Logout"} className=' tooltip tooltip-bottom '>
-              <button onClick={logout} data-tip="Logout" className='border solid  rounded-md hover:bg-slate-200 p-2 ml-3 flex justify-center tooltip-bottom '>
-                <img className='h-7 w-7 tooltip-bottom' data-tip="Logout" src="https://cdn-icons-png.flaticon.com/128/16967/16967536.png" alt="" />
+    <div className='bg-whitesmoke'>
+    <ToastContainer
+      position="bottom-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+      transition={Bounce}
+    />
+    <div className='md:grid md:grid-cols-7 p-5 h-screen'>
+      {/* Modal for mobile screens */}
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box">
+          <form method="dialog">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <h3 className="font-bold text-lg">Hello!</h3>
+          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+          <div className='overflow-y-scroll h-[100%] relative'>
+            <h1 className='w-full btn top-0 mb-5 flex justify-center text-white' style={{ backgroundImage: "linear-gradient(#0018A8,#1C39BB)" }}>Welcome, {name}</h1>
+            <div className="pt-2 relative mx-auto text-gray-600 mb-5 p-2">
+              <input value={search} autoComplete='off' onChange={(e) => { setSearch(e.target.value) }} className="border-2 border-gray-300 bg-white w-full h-10 px-5 pr-16 rounded-lg text-sm outline-orange-600 focus:outline-none"
+                type="search" name="search" placeholder="Search" />
+              <button type="submit" onClick={() => searchUser(search)} className="absolute right-0 top-0 mr-5 mt-5">
+                {searchLoading
+                  ?
+                  <span className="loading loading-spinner loading-md"></span>
+                  :
+                  <img className='h-5 w-5' src="https://cdn-icons-png.flaticon.com/128/11741/11741045.png" alt="" />}
               </button>
             </div>
+  
+            {userLoading
+              ?
+              <div className="flex flex-col mt-10 gap-4 w-80">
+                <h1 className='ml-5 font-light'>Loading your Chats......</h1>
+                <div className="skeleton h-32 w-full"></div>
+                <div className="skeleton h-6 w-full"></div>
+                <div className="skeleton h-6 w-full"></div>
+                <div className="skeleton h-6 w-full"></div>
+              </div>
+              :
+              <div>
+                {Users.map((element, index) => (
+                  <button key={index} onClick={() => passdata(element)} className="w-full btn text-white mb-5 h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(transparent,transparent)" }}>
+                    <div className="avatar online ml-6">
+                      <div className="w-10 h-10 rounded-full">
+                        <img src={`${UserandomImages()}`} alt="avatar" />
+                      </div>
+                    </div>
+                    <div className='ml-10 text-gray-700 col-span-3 chat chat-start'>
+                      {element.fullname}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            }
           </div>
-
-          <div className='flex flex-col flex-grow p-3 bg-white-500'>
-            <div className=' w-full p-3 md:h-[550px] overflow-y-scroll'>
-              {checkselected
-                ?
-                <div className='flex justify-center items-center mt-36 '>
-                  <div className='flex flex-col'>
-                    <h1 className='btn font-light mb-5'> Select a conversation to start........</h1>
-
+        </div>
+      </dialog>
+  
+      {/* User section for larger screens */}
+      <div className='hidden md:block md:col-span-2 p-4 overflow-y-scroll h-[100%] relative -top-4' style={{ scrollbarWidth: '5px', scrollbarColor: 'whitesmoke transparent', borderRadius: '15px' }}>
+        <h1 className='w-full btn top-0 mb-5 flex justify-center text-white' style={{ backgroundImage: "linear-gradient(#0018A8,#1C39BB)" }}>Welcome, {name}</h1>
+        <div className="pt-2 relative mx-auto text-gray-600 mb-5 p-2">
+          <input value={search} autoComplete='off' onChange={(e) => { setSearch(e.target.value) }} className="border-2 border-gray-300 bg-white w-full h-10 px-5 pr-16 rounded-lg text-sm outline-orange-600 focus:outline-none"
+            type="search" name="search" placeholder="Search" />
+          <button type="submit" onClick={() => searchUser(search)} className="absolute right-0 top-0 mr-5 mt-5">
+            {searchLoading
+              ?
+              <span className="loading loading-spinner loading-md"></span>
+              :
+              <img className='h-5 w-5' src="https://cdn-icons-png.flaticon.com/128/11741/11741045.png" alt="" />}
+          </button>
+        </div>
+  
+        {userLoading
+          ?
+          <div className="flex flex-col mt-10 gap-4 w-80">
+            <h1 className='ml-5 font-light'>Loading your Chats......</h1>
+            <div className="skeleton h-32 w-full"></div>
+            <div className="skeleton h-6 w-full"></div>
+            <div className="skeleton h-6 w-full"></div>
+            <div className="skeleton h-6 w-full"></div>
+          </div>
+          :
+          <div>
+            {Users.map((element, index) => (
+              <button key={index} onClick={() => passdata(element)} className="w-full btn text-white mb-5 h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(transparent,transparent)" }}>
+                <div className="avatar online ml-6">
+                  <div className="w-10 h-10 rounded-full">
+                    <img src={`${UserandomImages()}`} alt="avatar" />
                   </div>
                 </div>
-                :
-                <div >
+                <div className='ml-10 text-gray-700 col-span-3 chat chat-start'>
+                  {element.fullname}
+                </div>
+              </button>
+            ))}
+          </div>
+        }
+      </div>
+  
+      <div className='col-span-5 md:h-[95%] flex flex-col'>
+        <div className='flex flex-row justify-start items-start'>
+          <h1 className='ml-5 btn p-5' style={{ width: "90%", backgroundImage: "linear-gradient(#0018A8,#1C39BB)" }}>
+            {loading ?
+              <div className='flex'>
+                <h1 className='font-thin text-white'>Loading chats......</h1>
+                <div className='flex justify-center items-center mb-10'>
+                  <span className="loading loading-spinner loading-md"></span>
+                </div>
+              </div>
+              :
+              <div className='text-white'>
+                To : {chattingwith}
+              </div>
+            }
+          </h1>
+          <div data-tip={"Logout"} className='tooltip tooltip-bottom'>
+            <button onClick={logout} data-tip="Logout" className='border solid rounded-md hover:bg-slate-200 p-2 ml-3 flex justify-center tooltip-bottom'>
+              <img className='h-7 w-7 tooltip-bottom' data-tip="Logout" src="https://cdn-icons-png.flaticon.com/128/16967/16967536.png" alt="" />
+            </button>
+            <button className="btn md:hidden fixed bottom-10 right-10" onClick={() => document.getElementById('my_modal_3').showModal()}>Open Users</button>
+          </div>
+        </div>
+  
+        <div className='flex flex-col flex-grow p-3 bg-white-500'>
+          <div className='w-full p-3 md:h-[550px] overflow-y-scroll'>
+            {checkselected
+              ?
+              <div className='flex justify-center items-center mt-36'>
+                <div className='flex flex-col'>
+                  <h1 className='btn font-light mb-5'>Select a conversation to start........</h1>
+                </div>
+              </div>
+              :
+              <div>
                 {datamessage.map((value, index) => {
-                  const task = (value.user == id) ? 'end ': 'start';
+                  const task = (value.user == id) ? 'end ' : 'start';
                   const colour = (value.user == id) ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black';
                   return (
                     <div key={index}>
@@ -275,37 +317,39 @@ function Chatbox() {
                 })}
                 <div ref={messagesEndRef} />
               </div>
-              
-              }
-            </div>
-          </div>
-          {/* Input message box */}
-          <div className='py-2 px-4 '>
-            <div className='flex w-full mb-5'>
-              <input
-                type="text"
-                value={message}
-                onChange={(e) => { setMessage(e.target.value) }}
-                placeholder="Type your message..."
-                className="flex-1 border border-gray-300 w-3/4 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"
-              />
-              <button onClick={handleMessageChange} className="ml-2 bg-blue-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-md">
-                {sentLoading
-                  ?
-                  <div>
-                    <span className="loading loading-spinner loading-md"></span>
-                  </div>
-                  :
-                  <div className='text-md'>Send</div>
-                }
-              </button>
-            </div>
+            }
           </div>
         </div>
-    
+  
+        {/* Input message box */}
+        <div className='py-2 px-4'>
+          <div className='flex w-full mb-5'>
+            <input
+              type="text"
+              value={message}
+              onChange={(e) => { setMessage(e.target.value) }}
+              placeholder="Type your message..."
+              className="flex-1 border border-gray-300 w-3/4 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"
+            />
+            <button onClick={handleMessageChange} className="ml-2 bg-blue-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-md">
+              {sentLoading
+                ?
+                <div>
+                  <span className="loading loading-spinner loading-md"></span>
+                </div>
+                :
+                <div className='text-md'>Send</div>
+              }
+            </button>
+          </div>
+        </div>
       </div>
-
     </div>
+  </div>
+  
+  // Button to open modal for mobile screens
+
+  
   );
 }
 
