@@ -258,14 +258,12 @@ function Chatbox() {
                   <div className='flex flex-col'>
                     <h1 className='btn font-light mb-5'> Select a conversation to start........</h1>
 
-                    <div className='flex justify-center ' >
-                    </div>
                   </div>
                 </div>
                 :
-                <div className=''>
+                <div >
                 {datamessage.map((value, index) => {
-                  const task = (value.user == id) ? 'end' : 'start';
+                  const task = (value.user == id) ? 'end ': 'start';
                   const colour = (value.user == id) ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black';
                   return (
                     <div key={index}>
