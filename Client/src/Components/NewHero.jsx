@@ -22,14 +22,36 @@ function NewHero() {
 
                 {/* middle */}
                 <div className=" md:flex md:flex-row h-1/2 w-full ">
-                    <div className="  ml-6  md:w-1/2 flex flex-col justify-center items-center">
-                        <h1 className=' mb-1  font-extrabold md:text-5xl text-3xl  w-96 bg-gradient-to-r font mt-5 from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient bg-300% text-black' >
-                            Start chatting with People anytime with GiggleChat
+                <section className=" flex justify-center w-full p-5 md:p-0 md:w-1/2">
+  <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+    <div className="mx-auto max-w-xl text-center">
+      <h1 className="text-3xl font-extrabold sm:text-5xl">
+      Simplify Messaging experience
+        <strong className="font-extrabold text-blue-700 sm:block"> Increase Conversation </strong>
+      </h1>
 
-                        </h1>
-                        <h1 className=' mt-7  font-medium w-96 text-blue-800'>Your conversations are protected with end-to-end encryption, ensuring privacy and confidentiality.</h1>
-                        <div className='w-96 mt-3 flex justify-center md:justify-start mb-20'> <button className=' text white rounded btn'><Link to="/register">Get Started</Link></button></div>
-                    </div>
+      <p className="mt-4 sm:text-xl/relaxed">
+      Navigate effortlessly through an easy-to-use and visually appealing design.
+      </p>
+
+      <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <Link to="/register"
+          className="block w-full rounded bg-blue-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+          
+        >
+          Get Started
+        </Link>
+
+        <a
+          className="block w-full rounded px-12 py-3 text-sm font-medium text-blue-600 shadow hover:text-red-700 focus:outline-none focus:ring active:text-red-500 sm:w-auto"
+          href="#"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
                     <div className=" md:w-1/2  flex justify-center">

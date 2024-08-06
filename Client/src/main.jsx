@@ -10,6 +10,8 @@ import NewHero from './Components/NewHero.jsx'
 
 
 
+
+
 const router=createBrowserRouter(
   createRoutesFromElements(
 
