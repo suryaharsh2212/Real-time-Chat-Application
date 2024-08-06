@@ -263,7 +263,7 @@ function Chatbox() {
                   </div>
                 </div>
                 :
-                <div className='flex'>
+                <div className=''>
                 {datamessage.map((value, index) => {
                   const task = (value.user == id) ? 'end' : 'start';
                   const colour = (value.user == id) ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black';
