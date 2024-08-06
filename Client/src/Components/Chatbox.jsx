@@ -324,7 +324,7 @@ function Chatbox() {
           </div>
 
           {/* Input message box */}
-          <div className='py-2 px-4 fixed md: bottom-0 '>
+          <div className='py-2 px-4 fixed md: bottom-0 will-change-transform'>
             <div className='flex w-full mb-5'>
               <input
                 type="text"
