@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 
 function NewHero() {
-    
+
     return (
         <div>
             <div className='md:h-full' >
@@ -22,12 +22,12 @@ function NewHero() {
 
                 {/* middle */}
                 <div className=" md:flex md:flex-row h-1/2 w-full ">
-                    <div className="  ml-3  md:w-1/2 flex flex-col justify-center items-center">
-                        <h1 className=' mb-1 font-extrabold md:text-5xl text-3xl  w-96 bg-gradient-to-r font mt-5 from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient bg-300% text-black' >
+                    <div className="  ml-6  md:w-1/2 flex flex-col justify-center items-center">
+                        <h1 className=' mb-1  font-extrabold md:text-5xl text-3xl  w-96 bg-gradient-to-r font mt-5 from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient bg-300% text-black' >
                             Start chatting with People anytime with GiggleChat
 
                         </h1>
-                        <h1 className=' mt-7 font-medium w-96 text-blue-800'>Your conversations are protected with end-to-end encryption, ensuring privacy and confidentiality.</h1>
+                        <h1 className=' mt-7  font-medium w-96 text-blue-800'>Your conversations are protected with end-to-end encryption, ensuring privacy and confidentiality.</h1>
                         <div className='w-96 mt-3 flex justify-center md:justify-start mb-20'> <button className=' text white rounded btn'><Link to="/register">Get Started</Link></button></div>
                     </div>
 
@@ -39,6 +39,7 @@ function NewHero() {
 
 
                 </div>
+
 
 
 
@@ -68,7 +69,7 @@ function NewHero() {
                             <img className="h-10 w-10 rounded-full " src="https://cdn-icons-png.flaticon.com/128/4488/4488418.png" alt="error" />
                             <h1 className=' font-extrabold text-sky-400 ml-2 mt-3'>About Giggle</h1>
                         </div>
-                        I've created a real-time chat application using WebSockets, allowing users to engage in instant messaging with anyone available to respond. This platform ensures seamless communication, enabling dynamic interactions and timely responses. Whether you're connecting with friends, colleagues, or new acquaintances. available to respond. This platform ensures seamless communication, enabling dynamic interactions and timely responses. Whether you're connecting with friends, or someone special. 
+                        I've created a real-time chat application using WebSockets, allowing users to engage in instant messaging with anyone available to respond. This platform ensures seamless communication, enabling dynamic interactions and timely responses. Whether you're connecting with friends, colleagues, or new acquaintances. available to respond. This platform ensures seamless communication, enabling dynamic interactions and timely responses. Whether you're connecting with friends, or someone special.
                     </div>
                 </div>
                 <div className='h-1/2 md:1/3  p-4'>
@@ -78,7 +79,7 @@ function NewHero() {
                             <h1 className=' font-extrabold text-sky-400 ml-2 mt-3'>Tech Stack</h1>
                         </div>
 
-                       
+
 
                         I've developed this project using a powerful tech stack to ensure efficiency and a seamless user experience. The frontend is built with React and Vite, leveraging their speed and flexibility. Tailwind CSS was used for styling, providing a utility-first approach for consistent design.
 
@@ -86,7 +87,7 @@ function NewHero() {
 
                         For version control and collaboration, I've relied on GitHub, and the project is deployed and hosted on Vercel, ensuring smooth deployment and scalability.
 
-                        
+
                     </div>
                 </div>
                 <div className='h-1/2 md:1/3  p-4'>
@@ -98,7 +99,7 @@ function NewHero() {
                         Hello! I'm Surya Prakash, currently in my 2nd year of B.Tech in Computer Science. I am passionate about full-stack development and dedicated to furthering my skills in this field. Chat UI has become increasingly integral in our daily lives, influencing how we connect and collaborate. As a developer, I am fascinated by the evolving landscape of chat UI design. On this page, I curate a collection of inspiring chat UI designs crafted by talented individuals worldwide.
                     </div>
                 </div>
-               
+
 
 
 
