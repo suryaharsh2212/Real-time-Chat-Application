@@ -176,7 +176,7 @@ function Chatbox() {
         transition={Bounce}
       />
       <div className='md:grid md:grid-cols-7 p-5 h-screen'>
-      <button className="btn md:hidden fixed top-4 right-4" onClick={() => document.getElementById('my_modal_3').showModal()}>Open Users</button>
+        <button className="btn md:hidden fixed top-4 right-4" onClick={() => document.getElementById('my_modal_3').showModal()}>Open Users</button>
 
 
         {/* Modal for mobile screens */}
@@ -212,7 +212,7 @@ function Chatbox() {
                 :
                 <div>
                   {Users.map((element, index) => (
-                   <button key={index} onClick={() => { passdata(element); document.getElementById('my_modal_3').close(); }} className="w-full btn text-white mb-5 h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(transparent,transparent)" }}>
+                    <button key={index} onClick={() => { passdata(element); document.getElementById('my_modal_3').close(); }} className="w-full btn text-white mb-5 h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(transparent,transparent)" }}>
 
                       <div className="avatar online ml-6">
                         <div className="w-10 h-10 rounded-full">
@@ -257,7 +257,7 @@ function Chatbox() {
             :
             <div>
               {Users.map((element, index) => (
-                <button key={index} onClick={() => {{passdata(element)}} } className="w-full btn text-white mb-5 h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(transparent,transparent)" }}>
+                <button key={index} onClick={() => { { passdata(element) } }} className="w-full btn text-white mb-5 h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(transparent,transparent)" }}>
                   <div className="avatar online ml-6">
                     <div className="w-10 h-10 rounded-full">
                       <img src={`${UserandomImages()}`} alt="avatar" />
@@ -307,16 +307,17 @@ function Chatbox() {
                 :
                 <div>
                   {datamessage.map((value, index) => {
-                    const task = (value.user == id) ? 'end' : 'start';
-                    const colour = (value.user == id) ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black';
+                    const alignment = (value.user === id) ? 'chat-end' : 'chat-start';
+                    const bubbleColor = (value.user === id) ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black';
                     return (
                       <div key={index}>
-                        <div className={`chat chat-${task}`}>
-                          <div className={`chat-bubble ${colour}`}>{value.message}</div>
+                        <div className={`chat ${alignment}`}>
+                          <div className={`chat-bubble ${bubbleColor}`}>{value.message}</div>
                         </div>
                       </div>
                     );
                   })}
+
                   <div ref={messagesEndRef} />
                 </div>
               }
