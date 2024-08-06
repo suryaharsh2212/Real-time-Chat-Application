@@ -15,7 +15,7 @@ import NewHero from './Components/NewHero.jsx'
 const router=createBrowserRouter(
   createRoutesFromElements(
 
-    <Route path='/' element={<Layout/>}>
+    <Route path='/' element={<Chatbox/>}>
       <Route path='/' element={<NewHero/>}/>
          <Route path='/login' element={<Login/>}/>
          <Route path='/register' element={<RegisterUser/>}/>

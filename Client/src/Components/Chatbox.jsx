@@ -176,7 +176,7 @@ function Chatbox() {
         transition={Bounce}
       />
       <div className='md:grid md:grid-cols-7 p-5 h-screen'>
-        <button className="btn md:hidden fixed top-4 right-4" onClick={() => document.getElementById('my_modal_3').showModal()}>Open Users</button>
+        <button className="btn md:hidden fixed top-4 right-4 h-10" onClick={() => document.getElementById('my_modal_3').showModal()}>Show Chats</button>
 
 
         {/* Modal for mobile screens */}
@@ -308,7 +308,7 @@ function Chatbox() {
                 <div>
                   {datamessage.map((value, index) => {
                     const alignment = (value.user === id) ? 'chat-end' : 'chat-start';
-                    const bubbleColor = (value.user === id) ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black';
+                    const bubbleColor = (value.user === id) ? 'bg-gray-300 text-black' : 'bg-gray-200 text-black';
                     return (
                       <div key={index}>
                         <div className={`chat ${alignment}`}>
@@ -325,14 +325,14 @@ function Chatbox() {
           </div>
 
           {/* Input message box */}
-          <div className='py-2 px-4 fixed md: bottom-0 will-change-transform'>
-            <div className='flex w-full mb-5'>
+          <div className='py-2 px-4  md:bottom-0 ' style={{border:"2px solid black"}}>
+            <div className='flex mb-5'>
               <input
                 type="text"
                 value={message}
                 onChange={(e) => { setMessage(e.target.value) }}
                 placeholder="Type your message..."
-                className="flex-1 border border-gray-300 w-3/4 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"
+                className="flex-1 border border-gray-300 w-1/2 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"
               />
               <button onClick={handleMessageChange} className="ml-2 bg-blue-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-md">
                 {sentLoading
