@@ -281,8 +281,6 @@ function Chatbox() {
               :
               <div className='text-white'>
                 To : {chattingwith}
-  <button className="btn md:hidden fixed bottom-10 right-10" onClick={() => document.getElementById('my_modal_3').showModal()}>Open Users</button>
-
               </div>
             }
           </h1>
@@ -299,7 +297,8 @@ function Chatbox() {
               ?
               <div className='flex justify-center items-center mt-36'>
                 <div className='flex flex-col'>
-                  <h1 className='btn font-light mb-5'>Select a conversation to start........</h1>
+  <button className="btn md:hidden fixed bottom-10 right-10" onClick={() => document.getElementById('my_modal_3').showModal()}>Open Users</button>
+  <h1 className='btn font-light mb-5'>Select a conversation to start........</h1>
                 </div>
               </div>
               :
