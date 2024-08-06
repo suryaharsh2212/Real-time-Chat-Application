@@ -263,21 +263,21 @@ function Chatbox() {
                   </div>
                 </div>
                 :
-                <div className=' '>
-                  {datamessage.map((value, index) => {
-                    const task = (value.user == id) ?'end':'start';
-                    const colour = !(value.user == id) ? 'bg-gray-100' : 'bg-gray-100';
-                    return (
-                      <div key={index}  >
-                        <div className={`chat chat-${task}`}>
-                          <div className={`chat-bubble ${colour} text-black`}> {value.message}</div>
-                        </div>
+                <div className=''>
+                {datamessage.map((value, index) => {
+                  const task = (value.user == id) ? 'end' : 'start';
+                  const colour = (value.user == id) ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black';
+                  return (
+                    <div key={index}>
+                      <div className={`chat chat-${task}`}>
+                        <div className={`chat-bubble ${colour}`}>{value.message}</div>
                       </div>
-
-                    )
-                  })}
-                  <div ref={messagesEndRef} />
-                </div>
+                    </div>
+                  );
+                })}
+                <div ref={messagesEndRef} />
+              </div>
+              
               }
             </div>
           </div>
