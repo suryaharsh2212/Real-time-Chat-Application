@@ -182,8 +182,7 @@ function Chatbox() {
           <form method="dialog">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
           </form>
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+         
           <div className='overflow-y-scroll h-[100%] relative'>
             <h1 className='w-full btn top-0 mb-5 flex justify-center text-white' style={{ backgroundImage: "linear-gradient(#0018A8,#1C39BB)" }}>Welcome, {name}</h1>
             <div className="pt-2 relative mx-auto text-gray-600 mb-5 p-2">
@@ -282,6 +281,8 @@ function Chatbox() {
               :
               <div className='text-white'>
                 To : {chattingwith}
+  <button className="btn md:hidden fixed bottom-10 right-10" onClick={() => document.getElementById('my_modal_3').showModal()}>Open Users</button>
+
               </div>
             }
           </h1>
@@ -289,7 +290,6 @@ function Chatbox() {
             <button onClick={logout} data-tip="Logout" className='border solid rounded-md hover:bg-slate-200 p-2 ml-3 flex justify-center tooltip-bottom'>
               <img className='h-7 w-7 tooltip-bottom' data-tip="Logout" src="https://cdn-icons-png.flaticon.com/128/16967/16967536.png" alt="" />
             </button>
-            <button className="btn md:hidden fixed bottom-10 right-10" onClick={() => document.getElementById('my_modal_3').showModal()}>Open Users</button>
           </div>
         </div>
   
@@ -348,7 +348,6 @@ function Chatbox() {
   </div>
   
   // Button to open modal for mobile screens
-
   
   );
 }
