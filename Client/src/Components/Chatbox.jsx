@@ -176,6 +176,8 @@ function Chatbox() {
       transition={Bounce}
     />
     <div className='md:grid md:grid-cols-7 p-5 h-screen'>
+  <button className="btn md:hidden fixed bottom-10 right-10" onClick={() => document.getElementById('my_modal_3').showModal()}>Open Users</button>
+
       {/* Modal for mobile screens */}
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box">
@@ -296,8 +298,7 @@ function Chatbox() {
             {checkselected
               ?
               <div className='flex justify-center items-center mt-36'>
-                <div className='flex flex-col'>
-  <button className="btn md:hidden fixed bottom-10 right-10" onClick={() => document.getElementById('my_modal_3').showModal()}>Open Users</button>
+                <div className=''>
   <h1 className='btn font-light mb-5'>Select a conversation to start........</h1>
                 </div>
               </div>
