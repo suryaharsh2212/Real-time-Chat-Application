@@ -212,7 +212,8 @@ function Chatbox() {
                 :
                 <div>
                   {Users.map((element, index) => (
-                    <button key={index} onClick={() => passdata(element)} className="w-full btn text-white mb-5 h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(transparent,transparent)" }}>
+                   <button key={index} onClick={() => { passdata(element); document.getElementById('my_modal_3').close(); }} className="w-full btn text-white mb-5 h-fit grid grid-cols-1 sm:grid-cols-5 gap-4 p-3 hover:bg-zinc-300" style={{ backgroundImage: "linear-gradient(transparent,transparent)" }}>
+
                       <div className="avatar online ml-6">
                         <div className="w-10 h-10 rounded-full">
                           <img src={`${UserandomImages()}`} alt="avatar" />
