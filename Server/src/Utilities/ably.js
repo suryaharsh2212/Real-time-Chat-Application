@@ -1,5 +1,5 @@
 import Ably from 'ably'
-const ably=new Ably.Realtime('OIeztA.-Emkzw:s2NCD6aseIigtDHSw4Rv-FUtDq_FfL5_1S5naKRAM5A')
+const ably=new Ably.Realtime('88tU5Q.cVzWGg:qEj5R0WYvH0fj3tbRb1-ADoQkaxvkFCizBcRdc403cI')
 
 function triggerEvent(channelName, eventName, data) {
     const channel = ably.channels.get(channelName);
