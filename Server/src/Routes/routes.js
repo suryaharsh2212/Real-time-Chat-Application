@@ -18,7 +18,7 @@ router.route("/getconversation").post(getConversation)
 router.route("/getuser").post(getUser)
 router.route("/registeruser").post(registerUser)
 router.route("/getcurrentuser").post(getCurrentUser)
-router.route("/logout").post(UseLogout)
+router.route("/logout").post(verifyJWT, UseLogout)
 router.route("/search").post(searchUser)
 router.route("/verify").post(VerifyOTP)
 
