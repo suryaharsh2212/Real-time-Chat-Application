@@ -21,42 +21,46 @@ function NewHero() {
 
 
                 {/* middle */}
-                <div className=" md:flex md:flex-row h-1/2 w-full ">
-                <section className=" flex justify-center w-full p-5 md:p-0 md:w-1/2">
-  <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
-    <div className="mx-auto max-w-xl text-center">
-      <h1 className="text-3xl font-extrabold sm:text-5xl">
-      Simplify Messaging experience
-        <strong className="font-extrabold text-blue-700 sm:block"> Increase Conversation </strong>
-      </h1>
+                <div
+                    className="md:flex md:flex-row h-1/2 w-full"
 
-      <p className="mt-4 sm:text-xl/relaxed">
-      Navigate effortlessly through an easy-to-use and visually appealing design.
-      </p>
+                >
 
-      <div className="mt-8 flex flex-wrap justify-center gap-4">
-        <Link to="/register"
-          className="block w-full rounded bg-blue-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
-          
-        >
-          Get Started
-        </Link>
+                    <section className=" flex justify-center w-full p-5 md:p-0 md:w-1/2">
+                        <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+                            <div className="mx-auto max-w-xl text-center">
+                                <h1 className="text-3xl font-extrabold sm:text-5xl">
+                                    Simplify Messaging experience
+                                    <strong className="font-extrabold text-blue-700 sm:block"> Increase Conversation </strong>
+                                </h1>
 
-        <a
-          className="block w-full rounded px-12 py-3 text-sm font-medium text-blue-600 shadow hover:text-red-700 focus:outline-none focus:ring active:text-red-500 sm:w-auto"
-          href="#"
-        >
-          Learn More
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+                                <p className="mt-4 sm:text-xl/relaxed">
+                                    Navigate effortlessly through an easy-to-use and visually appealing design.
+                                </p>
+
+                                <div className="mt-8 flex flex-wrap justify-center gap-4">
+                                    <Link to="/register"
+                                        className="block w-full rounded bg-blue-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+
+                                    >
+                                        Get Started
+                                    </Link>
+
+                                    <div
+                                        className="block w-full rounded px-12 py-3 text-sm font-medium text-blue-600 shadow hover:text-red-700 focus:outline-none focus:ring active:text-red-500 sm:w-auto"
+
+                                    >
+                                        Learn More
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
 
-                    <div className=" md:w-1/2  flex justify-center">
-                  
-                        <img className=" h-full" src="https://res.cloudinary.com/dllgqcla4/image/upload/v1722516205/man-with-texting-receiving-messages_o047lr.png" alt="" />
+                    <div className=" md:w-full  flex justify-center">
+
+                        <img className=" h-full w-full cover-fill md:scale-75 md:ml-10" src="https://res.cloudinary.com/dllgqcla4/image/upload/v1725813413/Frame_15_tzrfpk.png" alt="" />
                     </div>
 
 
@@ -68,23 +72,8 @@ function NewHero() {
 
             </div>
             {/* hero element  */}
-            <div className="md:p-10 mt-10 bg-white">
-                <div className="hero shadow-sm rounded-2xl hover:bg-whitesmoke md:h-96">
-                    <div className="hero-content flex-col lg:flex-row-reverse">
-                        <img
-                            src="https://res.cloudinary.com/dllgqcla4/image/upload/v1719601977/kky3kg62s4txou240siw.jpg"
-                            className="max-w-sm rounded-lg " />
-                        <div>
-                            <h1 className="text-5xl font-bold">What is Giggle?</h1>
-                            <p className="py-6">
-                                Giggle is a dynamic and user-friendly chat application designed to bring people closer through seamless communication. Whether you're connecting with friends, family, or colleagues, Giggle offers a robust platform that prioritizes simplicity and reliability. With intuitive interface features and a wide range of customization options, users can personalize their chat experience to suit their preferences. From instant messaging to group chats and file sharing, Giggle ensures that staying connected is both convenient and enjoyable. Emphasizing security and privacy, Giggle provides a safe environment for users to interact, making it the go-to choice for modern communication needs.
-                            </p>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='w-full md:h-96 flex flex-col md:flex-row md:p-10 py-10 -mt-10'>
+            <div className='w-full md:h-96 flex flex-col md:flex-row md:p-15 py-10 '>
                 <div className='h-1/2 md:1/3  p-4'>
                     <div className='bg-whitesmoke rounded-md shadow-lg p-5 hover:outline hover:shadow-xl'>
                         <div className="flex p-2">
@@ -129,6 +118,51 @@ function NewHero() {
 
 
             </div>
+            <section>
+                <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8 text-black">
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                        <div className="bg-gray-100 p-8 md:p-12 lg:px-16 lg:py-24">
+                            <div className="mx-auto max-w-xl text-center">
+                                <h2 className="text-2xl font-bold  md:text-3xl">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit
+                                </h2>
+
+                                <p className="hidden  sm:mt-4 sm:block">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam
+                                    sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet
+                                    volutpat quisque ut interdum tincidunt duis.
+                                </p>
+
+                                <div className="mt-4 md:mt-8">
+                                    <a
+                                        href="#"
+                                        className="inline-block rounded border border-white bg-white px-12 py-3 text-sm font-medium text-blue-500 transition hover:bg-transparent hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
+                                    >
+                                        Get Started Today
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2">
+                            <img
+                                alt=""
+                                src="https://images.unsplash.com/photo-1621274790572-7c32596bc67f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80"
+                                className="h-40 w-full object-cover sm:h-56 md:h-full"
+                            />
+
+                            <img
+                                alt=""
+                                src="https://images.unsplash.com/photo-1567168544813-cc03465b4fa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                                className="h-40 w-full object-cover sm:h-56 md:h-full"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            
             <footer className="footer footer-center bg-primary text-primary-content mt-32 p-10">
                 <aside>
 

@@ -1,5 +1,6 @@
 import { Message } from "../Database/Models/Messagemodel.js";
 import { triggerEvent } from "../Utilities/ably.js";
+// import { io } from "../socket.io/socketConnection.js"; 
 const send_msg = async (req, res) => {
     const response = {
         message: "No msg",
@@ -8,7 +9,8 @@ const send_msg = async (req, res) => {
     };
     try {
         const { message, senderId, receiverId } = req.body;
-       
+
+        
         const conversation = await Message.findOne({
             users: {
                 $all: [
@@ -22,7 +24,8 @@ const send_msg = async (req, res) => {
                 users: [senderId, receiverId],
                 messages: [{ user: senderId, message: message }]
             });
-            triggerEvent(`${receiverId._id}`,'new-message',{ text: message,senderId })
+            // io.emit(`new-message${receiverId._id}`,{message,senderId,receiverId}) 
+            triggerEvent(`${receiverId._id}`,'new-message',{ text: message, })
 
             response.message = message;
             response.status = "active";
@@ -36,7 +39,7 @@ const send_msg = async (req, res) => {
                 { _id: conversation._id },
                 { $push: { messages: newMessage }}
             );
-            triggerEvent(`${receiverId._id}`,'new-message',{ text: message,senderId })
+            io.emit(`new-message${receiverId._id}`,{message,senderId,receiverId})
             response.message=message;
             response.status="active"
             response.sent="true"

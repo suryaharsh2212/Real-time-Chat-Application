@@ -8,7 +8,6 @@ import { verifyJWT } from "../Middleware/auth.js";
 import getCurrentUser from "../Controllers/getCurrentUserChatting.js";
 import UseLogout from "../Controllers/LogoutUser.js";
 import searchUser from "../Controllers/sendSearchUser.js";
-import VerifyOTP from "../Controllers/VerifyOtp.js";
 
 const router=Router()
 
@@ -18,9 +17,8 @@ router.route("/getconversation").post(getConversation)
 router.route("/getuser").post(getUser)
 router.route("/registeruser").post(registerUser)
 router.route("/getcurrentuser").post(getCurrentUser)
-router.route("/logout").post(verifyJWT, UseLogout)
+router.route("/logout").post(UseLogout)
 router.route("/search").post(searchUser)
-router.route("/verify").post(VerifyOTP)
 
 
 export {router}     
