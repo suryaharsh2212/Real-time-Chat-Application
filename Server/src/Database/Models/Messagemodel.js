@@ -10,7 +10,7 @@ const MessageSchema = new mongoose.Schema({
             message: String,
             timestamp: {
                 type: Date,
-                default: Date.now 
+                default: Date.now // Set default value to current timestamprs
             }
         }],
         default: []
