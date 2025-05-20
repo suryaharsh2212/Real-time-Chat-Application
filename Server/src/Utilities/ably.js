@@ -1,5 +1,9 @@
 import Ably from 'ably'
+
 const ably=new Ably.Realtime('Wrp4JA.eNrmQg:qGwpM2cfNIO0U1CeUD_P2NMjdIl0sV8v8DYd0IIFbSY')
+
+
+
 // Example function to publish an event
 function triggerEvent(channelName, eventName, data) {
     const channel = ably.channels.get(channelName);
